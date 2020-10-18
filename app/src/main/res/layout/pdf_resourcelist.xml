@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardBackgroundColor="@android:color/transparent"
+    card_view:cardElevation="0dp"
+>
+    <RelativeLayout android:layout_height="90dp"
+        android:layout_width="match_parent"
+        android:background="?attr/cardbackgroundcolor"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:textColor="?attr/textcolor"
+            android:layout_centerVertical="true"
+            android:text="Sample PDF Book"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pdf_resource_name"/>
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="?attr/visibile"
+            android:id="@+id/view_pdf_resource"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="60dp"/>
+
+        <Button
+            android:id="@+id/download_pdf_resource"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/downl" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

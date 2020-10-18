@@ -1,0 +1,157 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_claim"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            android:id="@+id/tool_claim"
+            app:titleTextColor="?attr/titleColor"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/gift_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gift"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_claim"
+        android:text="Do you belong to REC Bijnor Hostel"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/belog_txt"/>
+    <CheckBox
+        android:buttonTint="?attr/textcolor"
+        android:id="@+id/chk_bx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_claim"
+        android:layout_alignBaseline="@+id/belog_txt"
+        android:layout_marginEnd="15dp"
+        android:layout_alignParentEnd="true"/>
+
+    <EditText
+        android:id="@+id/hostel_name"
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:textColor="?attr/textcolor"
+        android:lines="1"
+        android:justificationMode="inter_word"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/belog_txt"
+        android:background="@drawable/square"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/comment"
+        android:hint="  Hostel Name"
+        android:visibility="gone"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/room_no"
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:textColor="?attr/textcolor"
+        android:lines="1"
+        android:justificationMode="inter_word"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/hostel_name"
+        android:background="@drawable/square"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/comment"
+        android:hint="  Room Number"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/complete_address"
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:textColor="?attr/textcolor"
+        android:lines="1"
+        android:justificationMode="inter_word"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/gift_pic"
+        android:background="@drawable/square"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/comment"
+        android:hint="  Complete Address"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/pin_code"
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:textColor="?attr/textcolor"
+        android:lines="1"
+        android:justificationMode="inter_word"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/complete_address"
+        android:background="@drawable/square"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/comment"
+        android:hint="  Pin Code"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pin_code"
+        android:textColor="?attr/textcolor"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="3dp"
+        android:id="@+id/note_del"
+        android:text="You have to pay delivery charges,if applicable."
+    />
+   <Button
+       android:layout_width="200dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:text="Deliver to me"
+       android:id="@+id/btn_surprise"
+       android:layout_centerInParent="true"
+       android:textColor="?attr/textcolor"
+       android:background="?attr/buttonround"
+       android:layout_marginBottom="20dp"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/sur_pro"/>
+
+
+
+
+</RelativeLayout>

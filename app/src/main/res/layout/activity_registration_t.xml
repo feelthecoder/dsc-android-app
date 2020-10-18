@@ -1,0 +1,265 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_register_t"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            app:titleTextColor="?attr/titleColor"
+            android:id="@+id/tool_register_t"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_below="@+id/toolbar_register_t"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_marginBottom="65dp">
+
+    <RelativeLayout
+        android:layout_below="@id/toolbar_register_t"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:padding="4dp"
+            android:textColor="?attr/textcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_t_text"
+            android:textAlignment="center"
+            android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:text="Please fill this information correctly because this information will be used for certification." />
+
+        <EditText
+            android:layout_below="@id/txt_t_text"
+            android:textColor="?attr/textcolor"
+            android:id="@+id/fullname_t"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:lines="1"
+            android:justificationMode="inter_word"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/square"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/comment"
+            android:hint="  Name"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/email_t"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:textColor="?attr/textcolor"
+            android:ellipsize="end"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/fullname_t"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Email"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:justificationMode="inter_word"
+            android:id="@+id/phone_t"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:textColor="?attr/textcolor"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/email_t"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Mobile No."
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/course_t"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            
+            android:maxLines="1"
+            android:textColor="?attr/textcolor"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/phone_t"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Course"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/year_t"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:textColor="?attr/textcolor"
+            android:layout_width="match_parent"
+            android:justificationMode="inter_word"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/course_t"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Year"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/branch_t"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:textColor="?attr/textcolor"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            
+            android:justificationMode="inter_word"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/year_t"
+            android:background="@drawable/square"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/comment"
+            android:hint="  Branch"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/college_t"
+            android:justificationMode="inter_word"
+            android:textColor="?attr/textcolor"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@+id/branch_t"
+            android:background="@drawable/square"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/comment"
+            android:hint="  College/University"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/event_name_t"
+            android:textColor="?attr/textcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:justificationMode="inter_word"
+            android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/college_t"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Training Name"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/train_t"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/event_name_t"
+            android:textColor="?attr/textcolor"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Category"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+        <EditText
+            android:id="@+id/refer_t"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/train_t"
+            android:textColor="?attr/textcolor"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Refferal Code (If any)"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+
+    </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        
+        android:textColor="?attr/textcolor"
+        android:id="@+id/id_button_t"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="?attr/buttonround"
+        android:text="Submit" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/t_progress"/>
+</RelativeLayout>

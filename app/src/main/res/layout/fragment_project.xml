@@ -1,0 +1,136 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="150dp"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtproject"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="You will be thrilled to know about this exclusive feature of this app.You can submit your project idea and get reviewed this by our team and get possible help from our side.!!"
+        android:textAlignment="textStart"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:textColor="?attr/textcolor"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:text="Instructions"
+        android:id="@+id/inb"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/txtproject"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="1. Upload your project idea file in a pdf format. our team will review it within 5 days. You can submit your project in any domain like Programming, Designing, Machine Learning, Web Development, Android, iOS, Artificial Intelligence, Cloud Computing,etc "
+        android:id="@+id/t1"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/inb"
+        android:layout_marginLeft="3dp"
+        />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="2. Your file name should be like as given below. It will help us to identify you. ( yourname_year_branch_college_city)"
+        android:id="@+id/t2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/t1"
+        />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. You can track realtime status of project by clicking 'My Projects' at upper right side. All Projects submitted by you will be available there with their status."
+        android:id="@+id/t3"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_below="@id/t2"
+        android:layout_marginLeft="3dp"
+        />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4. Download a sample project and make your project pdf with same format as as given in sample pdf. In case sample pdf file format not followed your project can be rejected."
+        android:id="@+id/t4"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_below="@id/t3"
+        android:layout_marginLeft="3dp"
+        />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5. For any queries regarding projects, please contact us on projects.dscrecbijnor@gmail.com. Our team will contact you for further communication."
+        android:id="@+id/t5"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/t4"
+        android:layout_marginLeft="3dp"
+        />
+<ProgressBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:id="@+id/ppp"
+    android:visibility="gone"/>
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/txt_file_project"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No file selected !"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_marginBottom="15dp"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:textColor="?attr/textcolor"
+        android:id="@+id/btdown"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="View Sample PDF"
+        android:background="?attr/buttonround"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        />
+
+
+    <Button
+        android:textColor="?attr/textcolor"
+        android:id="@+id/btupload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="?attr/buttonround"
+        android:text="Upload PDF" />
+</RelativeLayout>

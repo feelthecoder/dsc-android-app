@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/card_train_e"
+    android:layout_centerInParent="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp"
+    android:background="@drawable/round"
+    card_view:cardUseCompatPadding="true"
+    >
+    <RelativeLayout
+        android:id="@+id/rel_train"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:id="@+id/btn_participate_t"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/buttonround"
+            android:backgroundTint="@color/color_welcome_1"
+            android:text="Participate" />
+
+        <TextView
+            android:id="@+id/txt_title_train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="Event"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/desc_short_train"
+            android:layout_width="328dp"
+            android:layout_height="157dp"
+            android:layout_below="@id/txt_title_train"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="This event is being oraganised by Developer Student Club REC Bijnor."
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/date_train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="20dp"
+            android:text="8 June 2019" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

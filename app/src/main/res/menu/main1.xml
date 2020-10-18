@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/msg"
+        android:title="Messages"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="300"
+        android:icon="?attr/chat"/>
+    <item android:id="@+id/profi"
+        android:title="Profile"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:orderInCategory="200"
+        android:icon="?attr/profile"/>
+    <item android:id="@+id/menuu"
+        android:title="Notification"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="200"
+        android:icon="?attr/notification"/>
+
+</menu>

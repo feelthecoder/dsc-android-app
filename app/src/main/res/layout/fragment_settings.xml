@@ -1,0 +1,42 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/app_bar_lay"
+        android:background="?attr/backgroundcolor"
+        android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                app:tabTextColor="?attr/textcolor"
+                android:layout_height="match_parent"
+                android:background="?attr/backgroundcolor">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:titleTextColor="?attr/textcolor"
+                    android:background="?attr/backgroundcolor"
+                    android:text="@string/user_settings" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    app:titleTextColor="?attr/textcolor"
+                    android:background="?attr/backgroundcolor"
+                    android:layout_height="match_parent"
+                    android:text="@string/app_settings" />
+            </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:background="?attr/backgroundcolor"
+        android:id="@+id/viewpager"
+        android:layout_below="@+id/app_bar_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      />
+</RelativeLayout>

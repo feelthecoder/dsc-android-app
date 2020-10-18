@@ -1,0 +1,73 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_result_quiz"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            app:titleTextColor="?attr/titleColor"
+            android:id="@+id/tool_result_quiz"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_result_quiz"
+        android:layout_marginBottom="65dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+    <lecho.lib.hellocharts.view.PieChartView
+        android:layout_width="280dp"
+        android:id="@+id/pro_result_quiz"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_height="280dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Win"
+        android:layout_centerHorizontal="true"
+        android:textSize="35sp"
+        android:textColor="?attr/textcolor"
+        android:layout_below="@id/pro_result_quiz"
+        android:id="@+id/pro_congo"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+100 DP"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textColor="?attr/textcolor"
+        android:layout_below="@id/pro_congo"
+        android:id="@+id/pro_score"/>
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="Play Again"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:textColor="?attr/textcolor"
+        android:layout_marginBottom="10dp"
+        android:background="?attr/buttonround"
+        android:id="@+id/play_again"/>
+
+</RelativeLayout>

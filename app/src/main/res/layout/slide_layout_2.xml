@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rel_2"
+    android:background="@color/colorPrimary">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/text_1"
+    android:text="@string/intro1"
+    android:layout_centerHorizontal="true"
+    android:textAlignment="center"
+    android:textSize="40sp"
+    android:layout_marginTop="60dp"
+    android:lineSpacingExtra="2dp"
+    android:textStyle="bold"
+    android:textColor="@color/colorWhite"
+    />
+
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="319dp"
+        android:layout_height="253dp"
+        android:layout_below="@+id/text_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/des2"
+        android:textAlignment="textStart"
+        android:textColor="@color/black_color"
+        android:textSize="15sp"
+        android:layout_marginStart="39dp"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_btn_intro_2"
+        android:text="Visit Website"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite" />
+</RelativeLayout>

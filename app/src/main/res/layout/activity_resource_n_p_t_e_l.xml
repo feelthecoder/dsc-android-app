@@ -1,0 +1,37 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+        android:id="@+id/toolbar_resource_nptel"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            android:id="@+id/tool_resource_nptel"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="?attr/titleColor"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:background="?attr/backgroundcolor"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/toolbar_resource_nptel"
+        android:id="@+id/recycler_resource_nptel"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="?attr/textcolor"
+        android:text="Resources are not available."
+        android:textSize="20sp"
+        android:id="@+id/resourcenptel_text"/>
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_like"
+    android:background="?attr/backgroundcolor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/round"
+        android:id="@+id/like_profile"
+        app:civ_border_width="0.3dp"
+        app:civ_border_color="@color/black_color"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/like_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/like_profile"
+        android:text="Vikas Kumar"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"/>
+
+
+</RelativeLayout>

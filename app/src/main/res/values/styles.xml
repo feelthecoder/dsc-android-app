@@ -1,0 +1,155 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundcolor">#fcfcfc</item>
+        <item name="cardbackgroundcolor">#E6E5E5</item>
+        <item name="textcolor">#000000</item>
+        <item name="tintcolor">#ffffff</item>
+        <item name="titleColor">#000000</item>
+        <item name="chatbox">@color/colorPrimary</item>
+        <item name="buttoncolor">@color/colorPrimary</item>
+        <item name="saved">@drawable/ic_pre_record</item>
+        <item name="mail">@drawable/ic_feed_black</item>
+        <item name="project">@drawable/sharp_timelapse_black_18dp</item>
+        <item name="profile">@drawable/sharp_account_circle_black_18dp</item>
+        <item name="hello">@drawable/info</item>
+        <item name="comment">@drawable/ic_comment</item>
+        <item name="share">@drawable/ic_share</item>
+        <item name="chat">@drawable/outline_chat_black_18dp</item>
+        <item name="like">@drawable/ic_like</item>
+        <item name="back">@drawable/ic_back_black</item>
+        <item name="notification">@drawable/baseline_notifications_black_18dp</item>
+        <item name="clearNot">@drawable/ic_clear</item>
+        <item name="buttonround">@drawable/round_corner</item>
+        <item name="downl">@drawable/ic_download</item>
+        <item name="visibile">@drawable/ic_view</item>
+        <item name="user">@drawable/ic_user</item>
+        <item name="dob">@drawable/ic_dob</item>
+        <item name="gen">@drawable/ic_gen</item>
+        <item name="phone">@drawable/ic_phone</item>
+        <item name="score">@drawable/ic_score</item>
+        <item name="domain">@drawable/ic_domain</item>
+        <item name="special">@drawable/ic_special</item>
+        <item name="github">@drawable/gith</item>
+        <item name="upload">@drawable/up_load</item>
+        <item name="android:actionMenuTextColor">#000000</item>
+
+        <item name="home">@drawable/baseline_house_black_18dp</item>
+        <item name="library">@drawable/sharp_school_black_18dp</item>
+        <item name="train">@drawable/baseline_card_membership_black_18dp</item>
+        <item name="workshop">@drawable/sharp_storefront_black_18dp</item>
+        <item name="event">@drawable/baseline_event_note_black_18dp</item>
+        <item name="quiz">@drawable/sharp_emoji_events_black_18dp</item>
+        <item name="compete">@drawable/baseline_code_black_18dp</item>
+        <item name="spandan">@drawable/sharp_emoji_objects_black_18dp</item>
+        <item name="leader">@drawable/baseline_leaderboard_black_18dp</item>
+        <item name="projecti">@drawable/sharp_sentiment_satisfied_black_18dp</item>
+        <item name="donate">@drawable/baseline_euro_symbol_black_18dp</item>
+        <item name="about">@drawable/sharp_emoji_people_black_18dp</item>
+        <item name="setting">@drawable/sharp_settings_black_18dp</item>
+        <item name="alertDialogTheme">@style/DLight</item>
+        <item name="shareit">@drawable/sharp_share_black_18dp</item>
+
+
+        <item name="drawerArrowStyle">@style/DrawerLight</item>
+        <item name="logout">@drawable/sharp_power_settings_new_black_18dp</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#2D3B42</item>
+        <item name="android:actionMenuTextColor">#AFA9A9</item>
+        <item name="downl">@drawable/ic_download_white</item>
+        <item name="visibile">@drawable/ic_view_white</item>
+        <item name="upload">@drawable/up_load_white</item>
+        <item name="clearNot">@drawable/ic_clear_white</item>
+        <item name="share">@drawable/ic_share_white</item>
+        <item name="comment">@drawable/ic_comment_white</item>
+        <item name="like">@drawable/ic_like_white</item>
+        <item name="mail">@drawable/ic_feed_white</item>
+        <item name="back">@drawable/ic_back_white</item>
+        <item name="hello">@drawable/info_white</item>
+        <item name="chatbox">@color/comment</item>
+        <item name="project">@drawable/ic_project_white</item>
+        <item name="saved">@drawable/ic_pre_r_white</item>
+        <item name="chat">@drawable/ic_chat_white</item>
+        <item name="colorPrimaryDark">#212121</item>
+        <item name="colorAccent">@color/colorWhite</item>
+        <item name="backgroundcolor">#303030</item>
+        <item name="notification">@drawable/ic_not_white</item>
+        <item name="profile">@drawable/ic_profile_white</item>
+        <item name="cardbackgroundcolor">#E6E5E5</item>
+        <item name="textcolor">#AFA9A9</item>
+        <item name="tintcolor">#ffffff</item>
+        <item name="titleColor">#ffffff</item>
+        <item name="buttonround">@drawable/round_corner_white</item>
+        <item name="buttoncolor">@color/colorPrimary</item>
+        <item name="user">@drawable/ic_user_white</item>
+        <item name="dob">@drawable/ic_dob_white</item>
+        <item name="gen">@drawable/ic_gen_white</item>
+        <item name="phone">@drawable/ic_phone_white</item>
+        <item name="score">@drawable/ic_score_white</item>
+        <item name="domain">@drawable/ic_domain_white</item>
+        <item name="special">@drawable/ic_special_white</item>
+        <item name="github">@drawable/github_white</item>
+
+        <item name="home">@drawable/baseline_home_white_18dp</item>
+        <item name="library">@drawable/baseline_school_white_18dp</item>
+
+        <item name="train">@drawable/baseline_card_membership_white_18dp</item>
+        <item name="workshop">@drawable/baseline_storefront_white_18dp</item>
+        <item name="event">@drawable/baseline_event_note_white_18dp</item>
+        <item name="quiz">@drawable/baseline_emoji_events_white_18dp</item>
+        <item name="compete">@drawable/baseline_code_white_18dp</item>
+        <item name="spandan">@drawable/baseline_emoji_objects_white_18dp</item>
+        <item name="leader">@drawable/baseline_leaderboard_white_18dp</item>
+        <item name="projecti">@drawable/baseline_sentiment_satisfied_alt_white_18dp</item>
+        <item name="donate">@drawable/baseline_euro_symbol_white_18dp</item>
+        <item name="about">@drawable/baseline_emoji_people_white_18dp</item>
+        <item name="setting">@drawable/baseline_settings_white_18dp</item>
+        <item name="shareit">@drawable/baseline_share_white_18dp</item>
+        <item name="logout">@drawable/baseline_power_settings_new_white_18dp</item>
+        <item name="drawerArrowStyle">@style/DrawerDark</item>
+        <item name="alertDialogTheme">@style/DLight</item>
+
+    </style>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.AppBarOverlay"></style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="DrawerLight" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/black_color</item>
+    </style>
+    <style name="DrawerDark" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/colorWhite</item>
+    </style>
+    <style name="DLight" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:textColor">@color/black_color</item>
+    </style>
+    <style name="DDark" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+
+
+
+</resources>

@@ -1,0 +1,57 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_start_quiz"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            android:id="@+id/tool_start_quiz"
+            app:titleTextColor="?attr/titleColor"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quiz_image"
+        android:layout_centerInParent="true"
+        android:src="@drawable/qu"/>
+
+    <TextView
+        android:id="@+id/txt_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_start_quiz"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="10dp"
+        android:text="Once started you will not be able to pause this quiz challenge. Do you want to start."
+        android:textColor="?attr/textcolor" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/start_quiz_in"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/textcolor"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:background="?attr/buttonround"
+        android:text="Start Challenge"/>
+
+
+
+</RelativeLayout>

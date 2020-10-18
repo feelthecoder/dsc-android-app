@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_tech"
+    card_view:cardElevation="0dp"
+    card_view:cardBackgroundColor="@android:color/transparent">
+    <RelativeLayout
+        android:backgroundTint="?attr/cardbackgroundcolor"
+        android:background="@drawable/round"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textColor="?attr/textcolor"
+            android:id="@+id/tech_caption"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="caption"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tech_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_below="@+id/tech_caption"
+            android:src="@drawable/dsclogo"
+            />
+        <TextView
+            android:textColor="?attr/textcolor"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:justificationMode="inter_word"
+            android:text="Description bout the post"
+            android:id="@+id/tech_desc"
+            android:layout_below="@+id/tech_img"
+            android:textSize="15sp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tech_desc"
+            android:layout_marginTop="4dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"/>
+        <LinearLayout
+            android:id="@+id/data"
+            android:layout_marginTop="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tech_desc">
+
+            <TextView
+                android:id="@+id/txt_likes"
+                android:layout_width="117dp"
+                android:textColor="?attr/textcolor"
+                android:layout_height="28dp"
+                android:text="0 Likes"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/txt_comment"
+                android:layout_width="117dp"
+                android:text="0 Comments"
+                android:textColor="?attr/textcolor"
+                android:textAlignment="center"
+                android:layout_height="28dp"/>
+            <TextView
+                android:id="@+id/txt_share"
+                android:text="0 Share"
+                android:textColor="?attr/textcolor"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/line_i"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/data"
+            android:layout_marginTop="2dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"/>
+        <LinearLayout
+            android:padding="6dp"
+            android:id="@+id/linu"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/line_i">
+
+            <ImageView
+                android:id="@+id/likes_tech"
+                android:layout_width="117dp"
+                android:layout_height="28dp"
+                android:src="?attr/like"
+                />
+            <ImageView
+                android:id="@+id/comment_tech"
+                android:layout_width="117dp"
+                android:src="?attr/comment"
+                android:layout_height="28dp"/>
+            <ImageView
+                android:id="@+id/share_tech"
+                android:layout_width="match_parent"
+                android:src="?attr/share"
+                android:layout_height="28dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

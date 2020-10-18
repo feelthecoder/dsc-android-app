@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel_post"
+    android:background="?attr/backgroundcolor"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_comment"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            app:titleTextColor="?attr/titleColor"
+            android:id="@+id/tool_comment"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_marginBottom="65dp"
+        android:layout_below="@id/toolbar_comment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/round"
+    android:id="@+id/card"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="6dp"
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="6dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="?attr/textcolor"
+            android:id="@+id/tech_caption_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="caption"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_marginTop="6dp"
+            android:id="@+id/tech_img_tech"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_height="250dp"
+            android:layout_below="@+id/tech_caption_t"
+            />
+        <TextView
+            android:textColor="?attr/textcolor"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:padding="4dp"
+            android:layout_marginLeft="3dp"
+            android:text="Description bout the post"
+            android:id="@+id/tech_desc_tech"
+            android:layout_below="@+id/tech_img_tech"
+            android:textSize="15sp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tech_desc_tech"
+            android:layout_marginTop="4dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"/>
+        <LinearLayout
+            android:id="@+id/data_tech"
+            android:layout_marginTop="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tech_desc_tech">
+
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:id="@+id/txt_likes_tech"
+                android:layout_width="117dp"
+                android:layout_height="28dp"
+                android:text="0 Likes"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:id="@+id/txt_comment_tech"
+                android:layout_width="117dp"
+                android:text="0 Comments"
+                android:textAlignment="center"
+                android:layout_height="28dp"/>
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:id="@+id/txt_share_tech"
+                android:text="0 Share"
+                android:textAlignment="center"
+                android:layout_width="118dp"
+                android:layout_height="28dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comment_recycler"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="4dp" />
+</RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:textColor="?attr/textcolor"
+        android:id="@+id/tech_comment"
+        android:background="@drawable/strox_no"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="  Enter your comments"
+        android:textColorHint="?attr/textcolor"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="60dp"
+        android:maxLines="1"
+        android:lines="1"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        />
+        <ImageButton
+            android:visibility="gone"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="50dp"
+            android:layout_centerVertical="true"
+            android:layout_height="50dp"
+            android:textColor="?attr/textcolor"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_send_white"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/round"
+            android:id="@+id/tech_send_comment"/>
+
+    </RelativeLayout>
+</RelativeLayout>

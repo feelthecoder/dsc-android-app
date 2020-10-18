@@ -1,0 +1,58 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/don"
+        android:textSize="15sp"
+        android:justificationMode="inter_word"
+        android:textAlignment="center"
+        android:text="Hello guys! this is extremely a big opprtunity for you all to donate while learning something. We are working hard in order to ensure that everyone get good and strong technical skills. We organise different training program, workshops, competitions,etc which are totally free. In return we are not asking anything, If you think we are going good and working for welfare of society you can donate to our club by clicking below button. It will be a good opportunity for you all to sponsor our events in indirectly way. Wait ! You will get 10 interview questions by experts which can be helpful for your career and interview. Our team will be highly thankful to you.                                                                                                                                                                               Team DSC , REC Bijnor"
+        />
+    <ImageView
+        android:layout_below="@id/don"
+        android:layout_above="@id/gpaya"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="?attr/domain"/>
+    <LinearLayout
+        android:id="@+id/gpaya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+        <EditText
+            android:textColor="?attr/textcolor"
+            android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:hint="Enter Donation Amount"
+        android:background="@drawable/strox_no"
+        android:id="@+id/gpay"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
+        />
+    <Button
+        android:textColor="?attr/textcolor"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Donate Now"
+        android:background="?attr/buttonround"
+        android:id="@+id/paytm"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+    </LinearLayout>l
+</RelativeLayout>

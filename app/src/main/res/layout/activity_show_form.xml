@@ -1,0 +1,269 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_submitted"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            android:id="@+id/tool_submitted"
+            app:titleTextColor="?attr/titleColor"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_below="@+id/toolbar_submitted"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_sub"
+            android:textColor="?attr/textcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="4dp"
+            android:text="This form can't be edited.For any changes, send us a mail on events.dscrecbijnor@gmail.com."
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_below="@id/txt_sub"
+            android:id="@+id/fullnametxt"
+            android:layout_width="match_parent"
+            android:textColor="?attr/textcolor"
+            android:justificationMode="inter_word"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/square"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/comment"
+            android:hint="  Name"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/emailtxt"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullnametxt"
+            android:textColor="?attr/textcolor"
+            android:justificationMode="inter_word"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Email"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/phonetxt"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:textColor="?attr/textcolor"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/emailtxt"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Mobile No."
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/coursetxt"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="?attr/textcolor"
+            android:layout_below="@id/phonetxt"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Course"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/yeartxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+           android:layout_below="@id/coursetxt"
+            android:textColor="?attr/textcolor"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Year"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="24sp" />
+
+        <TextView
+            android:justificationMode="inter_word"
+            android:id="@+id/branchtxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:textColor="?attr/textcolor"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/yeartxt"
+            android:background="@drawable/square"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/comment"
+            android:hint="  Branch"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/collegetxt"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:textColor="?attr/textcolor"
+            android:justificationMode="inter_word"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/branchtxt"
+            android:background="@drawable/square"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/comment"
+            android:hint="  College/University"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/event_nametxt"
+            android:maxLines="1"
+            android:textColor="?attr/textcolor"
+            android:lines="1"
+            android:justificationMode="inter_word"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginStart="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/collegetxt"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Event Name"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/eventtxt"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:textColor="?attr/textcolor"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/event_nametxt"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:hint="  Category"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/datetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="?attr/textcolor"
+            android:layout_below="@id/eventtxt"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:ellipsize="end"
+            android:hint="  Date"
+            android:justificationMode="inter_word"
+            android:lines="1"
+            android:maxLines="1"
+            android:layout_marginTop="15dp"
+            android:scrollHorizontally="true"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/refertxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="?attr/textcolor"
+            android:layout_below="@id/eventtxt"
+            android:background="@drawable/square"
+            android:backgroundTint="@color/comment"
+            android:ellipsize="end"
+            android:hint="  Refferal Code"
+            android:justificationMode="inter_word"
+            android:lines="1"
+            android:maxLines="1"
+            android:layout_marginTop="15dp"
+            android:scrollHorizontally="true"
+            android:textSize="24sp" />
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

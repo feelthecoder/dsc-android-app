@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="About Spandan"
+        android:icon="?attr/hello"
+        android:id="@+id/about_spa"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="300"
+        >
+    </item>
+    <item android:title="Send Email"
+        app:showAsAction="ifRoom"
+        android:icon="?attr/mail"
+        android:orderInCategory="300"
+        android:id="@+id/send_mail_spa"
+        >
+    </item>
+
+
+</menu>

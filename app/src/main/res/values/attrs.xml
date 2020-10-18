@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ds">
+        <attr name="backgroundcolor" format="color"/>
+        <attr name="cardbackgroundcolor" format="color"/>
+        <attr name="textcolor" format="color" />
+        <attr name="tintcolor" format="color" />
+        <attr name="buttoncolor" format="color" />
+        <attr name="titleColor" format="color"/>
+
+        <attr name="profile" format="reference"/>
+
+        <attr name="notification" format="reference"/>
+        <attr name="clearNot" format="reference"></attr>
+
+        <attr name="chat" format="reference"/>
+        <attr name="saved" format="reference"/>
+
+        <attr name="hello" format="reference"/>
+        <attr name="mail" format="reference"/>
+        <attr name="project" format="reference"/>
+
+        <attr name="like" format="reference"/>
+
+        <attr name="comment" format="reference"/>
+
+        <attr name="share" format="reference"/>
+        <attr name="back" format="reference"/>
+        <attr name="buttonround" format="reference"/>
+        <attr name="visibile" format="reference"/>
+        <attr name="downl" format="reference"/>
+        <attr name="user" format="reference"/>
+        <attr name="dob" format="reference"/>
+        <attr name="gen" format="reference"/>
+        <attr name="phone" format="reference"/>
+        <attr name="score" format="reference"/>
+        <attr name="domain" format="reference"/>
+        <attr name="special" format="reference"/>
+        <attr name="github" format="reference"/>
+        <attr name="upload" format="reference"/>
+
+        <attr name="home" format="reference"/>
+        <attr name="library" format="reference"/>
+        <attr name="train" format="reference"/>
+        <attr name="workshop" format="reference"/>
+        <attr name="event" format="reference"/>
+        <attr name="quiz" format="reference"/>
+        <attr name="compete" format="reference"/>
+        <attr name="spandan" format="reference"/>
+        <attr name="leader" format="reference"/>
+        <attr name="projecti" format="reference"/>
+        <attr name="donate" format="reference"/>
+        <attr name="about" format="reference"/>
+        <attr name="setting" format="reference"/>
+        <attr name="shareit" format="reference"/>
+        <attr name="logout" format="integer"/>
+
+        <attr name="chatbox" format="color"/>
+
+
+
+
+
+
+
+    </declare-styleable>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+</resources>

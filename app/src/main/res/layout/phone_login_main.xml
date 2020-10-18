@@ -1,0 +1,56 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/text_enter"
+        android:layout_width="273dp"
+        android:layout_height="192dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/dsclogo" />
+
+    <Spinner
+        android:foregroundTint="?attr/textcolor"
+        android:background="?attr/backgroundcolor"
+        android:id="@+id/spinn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_enter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="262dp"
+        android:visibility="visible" />
+
+    <EditText
+        android:textColor="?attr/textcolor"
+        android:id="@+id/ed_login"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_enter"
+        android:textColorHint="?attr/textcolor"
+        android:maxLines="1"
+        android:lines="1"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:background="@drawable/strox_no"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="35dp"
+        android:hint="Enter Your Number" />
+
+    <Button
+        android:textColor="?attr/textcolor"
+        android:id="@+id/phone_loge"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:background="?attr/buttonround"
+        />
+</RelativeLayout>

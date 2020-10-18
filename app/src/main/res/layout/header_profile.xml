@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="172dp"
+    android:id="@+id/linear"
+    android:background="?attr/colorPrimary"
+    >
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+
+        android:id="@+id/img_head"
+        android:layout_width="110dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="110dp"
+        android:src="@drawable/dsclogo"
+        app:civ_border_color="@color/black_color"
+        app:civ_border_width="2dp"
+        />
+
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/user2"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="User Name" />
+
+
+
+</LinearLayout>
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/user0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:textAlignment="center"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="329dp"
+        android:text="Hey,"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/user1"
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:textAlignment="center"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="329dp"
+        android:text="User"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/user3"
+        android:textColor="?attr/textcolor"
+        android:textAlignment="center"
+        android:layout_below="@+id/user1"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="2dp"
+        android:textSize="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xxxxxxx@xxxx.com" />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0"
+        android:layout_alignBottom="@id/linear"
+        android:layout_marginEnd="10dp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="150dp"
+        android:layout_alignEnd="@+id/linear"/>
+</RelativeLayout>

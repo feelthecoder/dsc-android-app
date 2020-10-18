@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardElevation="0dp"
+    card_view:cardBackgroundColor="@android:color/transparent"
+>
+    <RelativeLayout android:layout_height="90dp"
+        android:layout_width="match_parent"
+        android:background="?attr/cardbackgroundcolor"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:textColor="?attr/textcolor"
+            android:layout_centerVertical="true"
+            android:text="Sample Youtube"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/youtube_resource_name"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

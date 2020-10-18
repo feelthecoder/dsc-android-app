@@ -1,0 +1,22 @@
+<RelativeLayout android:layout_width="300dp"
+    android:padding="2dp"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/profile_image"
+        android:src="@drawable/dsclogo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:padding="8dp"
+        android:layout_toRightOf="@id/profile_image"
+        android:text="Hello"
+        android:textColor="?attr/textcolor"
+        android:textSize="18sp"
+        android:id="@+id/show_message_if"
+        android:background="@drawable/background_left"/>
+</RelativeLayout>

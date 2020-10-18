@@ -1,0 +1,42 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <TextView
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:text="This leaderboard list users as per their developer points earned by playing challeneges, doing registrations,etc. Ranking based on total developer points earned till date now. Prizes can be claimed only on 30th of every month."
+        android:id="@+id/hack"
+        android:textColor="?attr/textcolor"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginBottom="65dp"
+        android:layout_below="@+id/hack"
+        android:background="?attr/backgroundcolor"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/releader"/>
+
+    <Button
+        android:id="@+id/btnclaim"
+        android:layout_width="276dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:textColor="?attr/textcolor"
+        android:background="?attr/buttonround"
+        android:text="Claim Prizes" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progress_leader"
+        android:visibility="gone"/>
+
+</RelativeLayout>

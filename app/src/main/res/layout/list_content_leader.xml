@@ -1,0 +1,35 @@
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/leader_image"
+        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/android"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leader_name"
+        android:text="User Name"
+        android:textColor="?attr/textcolor"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leader_points"
+        android:text="0 DP"
+        android:textColor="?attr/textcolor"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
+
+</RelativeLayout>

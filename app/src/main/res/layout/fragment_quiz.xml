@@ -1,0 +1,107 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="150dp"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtprojectq"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="You will be thrilled to know about this exclusive feature of this app.You can play quiz of your favourite programming language/technology and earn developer points which can be used to be the king/queen of leaderboard and win a exciting surprise."
+                android:textAlignment="textStart"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructions"
+                android:id="@+id/qinb"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/txtprojectq"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="1. Click on start quiz and select any category of quiz. You can select any domain like Programming(C,C++,Python,Java,etc), Designing, Machine Learning, Web Development, Android, iOS, Artificial Intelligence, Cloud Computing,etc. "
+                android:id="@+id/qt1"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/qinb"
+                android:layout_marginLeft="3dp"
+                />
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="2. There will be 5 questions of type MCQ in each category. For each question you have 15 seconds to answer."
+                android:id="@+id/qt2"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/qt1"
+                />
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. You win a challenge if you answered 3 or more questions correctly and get 100 developer points."
+                android:id="@+id/qt3"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_below="@id/qt2"
+                android:layout_marginLeft="3dp"
+                />
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. If you loss a quiz challenge, it means you have loss 120 developer points."
+                android:id="@+id/qt4"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_below="@id/qt3"
+                android:layout_marginLeft="3dp"
+                />
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. You can check your previous quiz challenge reports by clicking on upper right corner in Challenge History section."
+                android:id="@+id/qt5"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/qt4"
+                android:layout_marginLeft="3dp"
+                />
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Play Quiz Challenge"
+        android:textColor="?attr/textcolor"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/start_quiz"
+        android:background="?attr/buttonround"/>
+</RelativeLayout>
+

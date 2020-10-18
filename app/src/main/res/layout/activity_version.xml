@@ -1,0 +1,102 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+    android:id="@+id/toolbar_version"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="?attr/colorPrimary"
+        android:id="@+id/tool_version"
+        app:titleTextColor="?attr/titleColor"
+        app:navigationIcon="?attr/back"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+</com.google.android.material.appbar.AppBarLayout>
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/ver_i"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/toolbar_version"
+        android:text="This application is designed and developed by Vikas Kumar. The version code of this application is 1.0. This application version name is 1.0. The next upcoming version of this application is named as 1.01 with version code of 1.1. The details of developer are given below."
+        />
+    <TextView
+        android:id="@+id/ver_gmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/ver_i"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/gmail"/>
+    <TextView
+        android:id="@+id/ver_insta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_alignBottom="@id/ver_gmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/gram"/>
+    <TextView
+        android:id="@+id/ver_twitter"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_alignBottom="@id/ver_gmail"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/twitter"/>
+    <TextView
+        android:id="@+id/ver_linkdn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ver_gmail"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/lkd"/>
+
+    <TextView
+        android:id="@+id/ver_what"
+        android:layout_width="63dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/ver_insta"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/wp" />
+
+    <TextView
+        android:id="@+id/ver_utube"
+        android:layout_width="58dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/ver_gmail"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/youtube" />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+       android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:text="v1.0"
+        />
+</RelativeLayout>

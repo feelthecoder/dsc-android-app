@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.example.dsc">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/dsclogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/dsclogo"
+        android:supportsRtl="true"
+        android:windowFullscreen="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ShowDonation"></activity>
+        <activity android:name=".ActivityResources" />
+        <activity android:name=".ResultQuizActivity" />
+        <activity android:name=".QuizResultActivity" />
+        <activity android:name=".QuizMainActivity" />
+        <activity android:name=".MyQuiz" />
+        <activity android:name=".StartQuizActivity" />
+        <activity android:name=".CategoryActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ClaimActivity" />
+        <activity android:name=".AboutActivity.ProfileActivity" />
+        <activity android:name=".AboutActivity.DesignActivity" />
+        <activity android:name=".AboutActivity.TechnicalActivity" />
+        <activity android:name=".AboutActivity.BoardActivity" />
+        <activity android:name=".AboutActivity.ManagementActivity" />
+        <activity android:name=".AboutActivity.MembersActivity" />
+        <activity android:name=".ActivityWeb" />
+        <activity android:name=".VersionActivity" />
+        <activity android:name=".DonateHistoryActivity" />
+        <activity android:name=".SettingsActivity.EditProfileActivity" />
+        <activity android:name=".SettingsActivity.ViewProfileActivity" />
+        <activity android:name=".ResourceActivity.ResourceBlogActivity" />
+        <activity android:name=".ResourceActivity.ResourceStandardBookActivity" />
+        <activity android:name=".ResourceActivity.ResourceDSCActivity" />
+        <activity android:name=".ResourceActivity.ResourceNPTELActivity" />
+        <activity android:name=".ResourceActivity.ResourceUdemyActivity" />
+        <activity android:name=".ResourceActivity.ResourceYoutubeActivity" />
+        <activity android:name=".ResourceActivity.ResourcePDFActivity" />
+        <activity android:name=".ResourceActivity.eResourceActivity" />
+        <activity android:name=".ViewImageActivity" />
+        <activity android:name=".SpandanRegistrationActivity" />
+        <activity android:name=".SpandanEventActivity" />
+        <activity android:name=".ViewSpandanActivity" />
+        <activity
+            android:name=".ShowFormActivity"
+            android:label="Form Details" />
+        <activity
+            android:name=".WorkshopDetailActivity"
+            android:label="Workshop Details" />
+        <activity android:name=".ActivityPDF" />
+        <activity
+            android:name=".TrainDetailActivity"
+            android:label="Training Details" />
+        <activity
+            android:name=".CompeteDetailActivity"
+            android:label="Competition Details" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="Registration" />
+        <activity
+            android:name=".CRegistrationActivity"
+            android:label="Registration" />
+        <activity
+            android:name=".EventDetailActivity"
+            android:label="Event Details" />
+        <activity
+            android:name=".PeopleLikedActivity"
+            android:label="People Who Liked" />
+        <activity
+            android:name=".FormsActivity"
+            android:label="Submitted Forms" />
+        <activity
+            android:name=".ResultActivity"
+            android:label="My Results" />
+        <activity
+            android:name=".MyProjects"
+            android:label="My Projects" />
+        <activity
+            android:name=".TRegistrationActivity"
+            android:label="Registration" />
+        <activity
+            android:name=".WRegistrationActivity"
+            android:label="Registration" />
+        <activity android:name=".dsc_splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".welcome_main" />
+        <activity android:name=".slide_layout_4" />
+        <activity android:name=".Phone_Verification_Activity" />
+        <activity android:name=".login" />
+        <activity android:name=".Register_User" />
+        <activity android:name=".Login_Email" />
+        <activity android:name=".Main1Activity" />
+        <activity android:name=".Phone_Login_Main" />
+        <activity android:name=".Google_Login_Activity" />
+        <activity
+            android:name=".PostTechActivity"
+            android:label="Add Comments" />
+
+        <service android:name=".Services.FCMService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

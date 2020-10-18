@@ -1,0 +1,191 @@
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:scrollbars="none"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/txttech"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:text="Spandan is a annual festival of Rajkiya Engineering College Bijnor. It has variety of programs in different field like cultural, technical, sports,etc. So,Technical part of this festival is named as Tech Spandan. This Tech Spandan is managed and organised by Developer Student Club. You can register for various events of Tech Spandan through our app and check respective result."
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/txt_avail"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/txttech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginStart="20dp"
+        android:text="Available Events"
+        android:textStyle="bold"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/txt_avail"
+        android:id="@+id/spandan_recycler"
+        android:background="?attr/backgroundcolor"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="14dp"
+        android:padding="6dp"
+        android:layout_margin="2dp"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:textColor="?attr/textcolor"
+        android:id="@+id/btn_result_view"
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="?attr/buttonround"
+        android:text=" Check Results"
+        android:layout_below="@id/spandan_recycler"/>
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:layout_marginTop="10dp"
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous Spandan"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/btn_result_view"/>
+
+    <HorizontalScrollView
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="?attr/backgroundcolor"
+        android:layout_height="120dp"
+        android:layout_below="@id/prev"
+        android:scrollbars="none"
+        android:id="@+id/hor_spa"
+        android:layout_marginTop="20dp"
+        >
+        <LinearLayout
+            android:background="?attr/backgroundcolor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_margin="4dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/one"
+                android:id="@+id/s11"
+                />
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/two"
+                android:id="@+id/s12"
+                android:layout_margin="4dp"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/three"
+                android:layout_margin="4dp"
+                android:id="@+id/s13"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/four"
+                android:layout_margin="4dp"
+                android:id="@+id/s14"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/five"
+                android:id="@+id/s15"
+                android:layout_margin="4dp"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="4dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/six"
+                android:id="@+id/s16"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:layout_margin="4dp"
+                android:src="@drawable/seven"
+                android:id="@+id/s17"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:layout_margin="4dp"
+                android:src="@drawable/eight"
+                android:id="@+id/s18"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/nine"
+                android:layout_margin="4dp"
+                android:id="@+id/s19"
+                />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:civ_border_color="@color/black_color"
+                app:civ_border_width="0.5dp"
+                android:layout_margin="4dp"
+                android:src="@drawable/twenty"
+                android:id="@+id/s20"
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+</RelativeLayout>
+</ScrollView>
+
+
+
+
+

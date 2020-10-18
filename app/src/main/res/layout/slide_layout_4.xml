@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/color_welcome_2">
+
+    <TextView
+        android:id="@+id/tx1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/intro3"
+        android:textAlignment="center"
+        android:textColor="@color/black_color"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tx2"
+        android:layout_width="314dp"
+        android:layout_height="74dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tx1"
+        android:layout_marginTop="7dp"
+        android:text="@string/des4"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tx3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tx2"
+        android:layout_marginTop="8dp"
+        android:text="@string/des5"
+        android:textAlignment="center"
+        android:textColor="@color/black_color"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tx4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tx3"
+        android:layout_marginTop="10dp"
+        android:text="@string/mot"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx4"
+        android:layout_centerHorizontal="true"
+        android:padding="1dp"
+        android:src="@drawable/used" />
+
+
+</RelativeLayout>

@@ -1,0 +1,244 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_edit_profile"
+        android:background="?attr/colorPrimary"
+        android:layout_height="300dp"
+       >
+
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/back"
+            android:id="@+id/tool_edit_profile"
+            app:titleTextColor="?attr/titleColor"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            app:civ_border_width="1dp"
+            android:layout_centerHorizontal="true"
+            app:civ_border_color="@color/color_welcome_2"
+            android:src="@drawable/userdraft"
+            android:id="@+id/profile_image_edit"
+
+            >
+
+        </com.mikhaellopez.circularimageview.CircularImageView>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_name_edit"
+            android:layout_below="@id/profile_image_edit"
+            android:hint="Display Name"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textColor="?attr/textcolor"
+            android:textSize="30sp"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_email_edit"
+            android:justificationMode="inter_word"
+            android:layout_below="@id/profile_name_edit"
+            android:hint="E Mail"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textColor="?attr/textcolor"
+            android:textSize="20sp"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_below="@id/toolbar_edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+    <TextView
+        android:background="?attr/user"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/textcolor"
+        android:id="@+id/profile_username_edit"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+            <EditText
+                android:id="@+id/profile_username_edit_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toRightOf="@+id/profile_username_edit"
+                android:hint="User Name"
+                android:justificationMode="inter_word"
+                android:textColor="?attr/textcolor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+        android:background="?attr/dob"
+        android:id="@+id/profile_dob_edit"
+        android:textColor="?attr/textcolor"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_username_edit"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <EditText
+        android:justificationMode="inter_word"
+        android:textColor="?attr/textcolor"
+        android:id="@+id/profile_dob_edit_a"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="20dp"
+        android:hint="DOB"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile_dob_edit"
+        android:layout_below="@id/profile_username_edit_a"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/profile_gender_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_dob_edit"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="?attr/gen"
+                android:textColor="?attr/textcolor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/profile_gender_edit_a"
+        android:layout_width="match_parent"
+        android:hint="Sex"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_dob_edit_a"
+        android:layout_marginStart="20dp"
+        android:textColor="?attr/textcolor"
+        android:layout_marginEnd="20dp"
+        android:justificationMode="inter_word"
+        android:layout_toRightOf="@id/profile_gender_edit"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/profile_phone_edit"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_gender_edit"
+        android:background="?attr/phone"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <EditText
+        android:hint="Phone Number"
+        android:id="@+id/profile_phone_edit_a"
+        android:textColor="?attr/textcolor"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:justificationMode="inter_word"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile_phone_edit"
+        android:layout_below="@id/profile_gender_edit_a"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/profile_score_edit"
+        android:textColor="?attr/textcolor"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_phone_edit"
+        android:background="?attr/score"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <TextView
+        android:textColor="?attr/textcolor"
+        android:id="@+id/profile_score_edit_a"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile_phone_edit"
+        android:layout_below="@id/profile_phone_edit_a"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/profile_skills_edit"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:textColor="?attr/textcolor"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_score_edit"
+        android:background="?attr/domain"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <EditText
+        android:justificationMode="inter_word"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/profile_skills_edit_a"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:textColor="?attr/textcolor"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile_phone_edit"
+        android:layout_below="@id/profile_score_edit_a"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:hint="Skills"
+        android:textSize="20sp"/>
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/edit_progress_profile"/>
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="200dp"
+        android:id="@+id/button_save_profile"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="?attr/textcolor"
+        android:layout_marginBottom="5dp"
+        android:background="?attr/buttonround"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
+        android:text="Update Profile"/>
+
+
+
+</RelativeLayout>

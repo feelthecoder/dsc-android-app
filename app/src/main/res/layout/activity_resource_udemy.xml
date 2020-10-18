@@ -1,0 +1,37 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/backgroundcolor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+        android:id="@+id/toolbar_resource_udemy"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
+
+        <androidx.appcompat.widget.Toolbar
+            android:background="?attr/colorPrimary"
+            android:id="@+id/tool_resource_udemy"
+            app:navigationIcon="?attr/back"
+            android:layout_width="match_parent"
+            app:titleTextColor="?attr/titleColor"
+            android:layout_height="?attr/actionBarSize" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="?attr/backgroundcolor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/toolbar_resource_udemy"
+        android:id="@+id/recycler_resource_udemy"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="?attr/textcolor"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Resources are not available."
+        android:textSize="20sp"
+        android:id="@+id/resourceudemy_text"/>
+</RelativeLayout>

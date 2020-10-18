@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:color="@color/black_color" android:width="1dp"/>
+    <corners android:radius="5dp"/>
+    <gradient android:endColor="@color/color_welcome_2" android:centerColor="@color/color_welcome_4"/>
+</shape>

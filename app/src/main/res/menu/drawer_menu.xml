@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/HOME"
+        android:title="Home"
+        android:icon="?attr/home"/>
+<group
+    android:id="@+id/g1" android:checkableBehavior="single">
+    <item android:id="@+id/edu"
+        android:icon="?attr/library"
+        android:title="e-Library"/>
+    <item android:id="@+id/Train"
+        android:icon="?attr/train"
+        android:title="Training"/>
+    <item android:id="@+id/workshop"
+        android:icon="?attr/workshop"
+        android:title="Workshops"/>
+    <item android:id="@+id/Event"
+        android:icon="?attr/event"
+        android:title="Events"/>
+</group>
+    <group android:id="@+id/g2"
+        android:checkableBehavior="single">
+        <item android:id="@+id/quiz"
+            android:icon="?attr/quiz"
+        android:title="Quiz"/>
+        <item android:id="@+id/compete"
+            android:icon="?attr/compete"
+            android:title="Competitions"/>
+        <item android:id="@+id/tech"
+            android:icon="?attr/spandan"
+            android:title="Tech Spandan"/>
+        <item android:id="@+id/leaderboard"
+            android:icon="?attr/leader"
+            android:title="Leaderboard"/>
+        <item android:id="@+id/project"
+            android:icon="?attr/projecti"
+            android:title="Submit Project Idea"/>
+</group>
+<group  android:id="@+id/g3"
+    android:checkableBehavior="single">
+<item android:id="@+id/donate"
+    android:icon="?attr/donate"
+android:title="Donate For Code"/>
+<item android:id="@+id/about"
+    android:icon="?attr/about"
+    android:title="About Us"/>
+</group>
+    <group  android:id="@+id/g4"
+        android:checkableBehavior="single">?
+        <item android:id="@+id/sett"
+            android:icon="?attr/setting"
+            android:title="Settings"/>
+        <item android:id="@+id/Share"
+            android:icon="?attr/shareit"
+            android:title="Share"/>
+        <item android:id="@+id/log"
+            android:title="Log Out"
+            android:icon="?attr/logout"/>
+    </group>
+</menu>

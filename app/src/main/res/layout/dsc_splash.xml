@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_splash"
+        android:layout_width="302dp"
+        android:layout_height="256dp"
+        android:adjustViewBounds="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="-4dp"
+        android:src="@drawable/dsclogo" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="90dp">
+
+        <ImageView
+            android:id="@+id/img_1"
+            android:adjustViewBounds="true"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="-140dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/col_log" />
+        <ImageView
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:id="@+id/img_aktu"
+            android:layout_toRightOf="@+id/stand_aktu"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="-140dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/aktu" />
+        <View
+            android:layout_width="3dp"
+            android:layout_height="80dp"
+            android:id="@+id/stand_aktu"
+            android:background="?attr/textcolor"
+            android:layout_toRightOf="@+id/img_1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_toRightOf="@+id/img_aktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:text="A Student Developer Community"
+            android:textColor="?attr/textcolor"/>
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
