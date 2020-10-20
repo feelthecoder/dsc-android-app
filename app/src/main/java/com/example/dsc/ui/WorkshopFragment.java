@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.Model.WorkGet;
 import com.example.dsc.R;
@@ -46,6 +48,8 @@ public class WorkshopFragment extends Fragment {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager HorizontalLayout;
     RelativeLayout connect;
+    ProgressBar workProgress;
+
 
     @Override
     public void onAttach(Context context) {
@@ -59,6 +63,8 @@ public class WorkshopFragment extends Fragment {
         recyclerView=view.findViewById(R.id.work_recycler);
         connect=view.findViewById(R.id.no_connect_work);
         dRef= FirebaseDatabase.getInstance().getReference("Workshops");
+        workProgress=view.findViewById(R.id.work_progress);
+        workProgress.setVisibility(View.VISIBLE);
         RecyclerViewLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
         HorizontalLayout = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -93,6 +99,7 @@ public class WorkshopFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("title")) {
+                            workProgress.setVisibility(View.INVISIBLE);
                             final String Caption = Objects.requireNonNull(dataSnapshot.child("title").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("pic").getValue()).toString();
                             final String shortdes = Objects.requireNonNull(dataSnapshot.child("shortdes").getValue()).toString();
@@ -147,6 +154,12 @@ public class WorkshopFragment extends Fragment {
                             setGuide("Paricipate","Click to Participate in this workshop.", workshopViewHolder.part,"partW");
 
 
+
+                        }
+                        else
+                        {
+                            workProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(getActivity(), "There are no workshops available currently", Toast.LENGTH_SHORT).show();
 
                         }
                     }

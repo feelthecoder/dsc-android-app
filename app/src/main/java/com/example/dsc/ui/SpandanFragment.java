@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +55,7 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
     String link;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager HorizontalLayout;
+    ProgressBar spaProgress;
 
 
 
@@ -101,6 +103,8 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
         lRef= FirebaseDatabase.getInstance().getReference("About");
         RecyclerViewLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+        spaProgress=view.findViewById(R.id.spandan_progress);
+        spaProgress.setVisibility(View.VISIBLE);
         HorizontalLayout = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         HorizontalLayout.setReverseLayout(true);
         HorizontalLayout.setStackFromEnd(true);
@@ -136,7 +140,7 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("pic")){
-
+                            spaProgress.setVisibility(View.INVISIBLE);
                             final String caption= Objects.requireNonNull(dataSnapshot.child("title").getValue()).toString();
                             final String desc= Objects.requireNonNull(dataSnapshot.child("description").getValue()).toString();
                             final String sDes= Objects.requireNonNull(dataSnapshot.child("shortdes").getValue()).toString();
@@ -189,7 +193,8 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
                             setGuide("Paricipate","Click to Participate in this competition.", spandanViewHolder.btn,"partTS");
                         }
                         else{
-                            Toast.makeText(getActivity(), "There are no events currently", Toast.LENGTH_SHORT).show();
+                            spaProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(getActivity(), "There are no events available currently", Toast.LENGTH_SHORT).show();
                         }
                     }
 

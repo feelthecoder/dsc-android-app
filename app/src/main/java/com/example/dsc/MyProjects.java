@@ -14,8 +14,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.Model.ProjectUpload;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -47,6 +49,7 @@ public class MyProjects extends AppCompatActivity {
     DatabaseReference dRef;
     RelativeLayout connect;
     TextView txtProject;
+    ProgressBar project_progress;
 
 
     private static final String CHANNEL_ID="PROJECT";
@@ -74,6 +77,7 @@ public class MyProjects extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         txtProject=findViewById(R.id.no_project_here);
+        project_progress=findViewById(R.id.project_progress);
         txtProject.setVisibility(View.VISIBLE);
         dRef = FirebaseDatabase.getInstance().getReference("Projects").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
         recyclerView = findViewById(R.id.projectlistView);
@@ -90,6 +94,7 @@ public class MyProjects extends AppCompatActivity {
         }
 
         if(isOnline()) {
+            project_progress.setVisibility(View.VISIBLE);
             getMyProjets();
             connect.setVisibility(View.INVISIBLE);
         }
@@ -125,6 +130,7 @@ public class MyProjects extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("status")) {
                             txtProject.setVisibility(View.INVISIBLE);
+                            project_progress.setVisibility(View.INVISIBLE);
                             final String projectCaption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("url").getValue()).toString();
                             String status = Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString();
@@ -166,6 +172,10 @@ public class MyProjects extends AppCompatActivity {
                                 projectViewHolder.mStatus.setText("Completed");
                                 projectViewHolder.mStatus.setTextColor(Color.GREEN);
                             }
+                        }else
+                        {
+                            project_progress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(MyProjects.this, "You have not submitted any project", Toast.LENGTH_SHORT).show();
                         }
 
                         setGuide("Projects","Swipe down to see your submitted projects & Click to view your project.",projectViewHolder.itemView,"projM");

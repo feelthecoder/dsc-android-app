@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.Model.RegistrationForm;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -37,6 +39,9 @@ public class FormsActivity extends AppCompatActivity {
     TextView connect;
     TextView txtForm;
 
+    ProgressBar formsProgress;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +59,8 @@ public class FormsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forms);
         Toolbar toolbar = findViewById(R.id.tool_formss);
 
+        formsProgress=findViewById(R.id.progress_forms);
+        formsProgress.setVisibility(View.VISIBLE);
 
         recyclerView = findViewById(R.id.forms_recycler_form);
        LinearLayoutManager li= new LinearLayoutManager(getApplicationContext());
@@ -105,6 +112,7 @@ public class FormsActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("email_")) {
                             txtForm.setVisibility(View.INVISIBLE);
+                            formsProgress.setVisibility(View.INVISIBLE);
                             final String category = Objects.requireNonNull(dataSnapshot.child("category").getValue()).toString();
                             final String date = Objects.requireNonNull(dataSnapshot.child("date_").getValue()).toString();
                             final String tName = Objects.requireNonNull(dataSnapshot.child("tName").getValue()).toString();
@@ -116,6 +124,7 @@ public class FormsActivity extends AppCompatActivity {
                             final String name = Objects.requireNonNull(dataSnapshot.child("name_").getValue()).toString();
                             final String year = Objects.requireNonNull(dataSnapshot.child("year_").getValue()).toString();
                             final String code= Objects.requireNonNull(dataSnapshot.child("code_").getValue()).toString();
+
 
 
                             formsViewHolder.mTitle.setText(tName);
@@ -139,6 +148,12 @@ public class FormsActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+
+                        }
+                        else
+                        {
+                            formsProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(FormsActivity.this, "You have not submitted any form", Toast.LENGTH_SHORT).show();
                         }
                     }
 

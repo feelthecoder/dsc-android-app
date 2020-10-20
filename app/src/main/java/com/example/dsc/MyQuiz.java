@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.Model.HistoryModel;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -34,6 +37,8 @@ public class MyQuiz extends AppCompatActivity {
     DatabaseReference hRef;
     RecyclerView recyclerView;
    public static Activity fa;
+   RelativeLayout not_avail;
+   ProgressBar quiz_proogress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,9 @@ public class MyQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_quiz);
         recyclerView=findViewById(R.id.record_quiz_pre);
+        quiz_proogress=findViewById(R.id.quiz_progress);
+        not_avail=findViewById(R.id.not_avail);
+        quiz_proogress.setVisibility(View.VISIBLE);
         fa=this;
         hRef= FirebaseDatabase.getInstance().getReference("QuizDataHistory").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         Toolbar toolbar=findViewById(R.id.tool_rec_quiz);
@@ -88,6 +96,7 @@ public class MyQuiz extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("quiz")) {
+                            quiz_proogress.setVisibility(View.INVISIBLE);
                              String quiz = Objects.requireNonNull(dataSnapshot.child("quiz").getValue()).toString();
                             String score = Objects.requireNonNull(dataSnapshot.child("correct").getValue()).toString();
                             String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
@@ -108,6 +117,12 @@ public class MyQuiz extends AppCompatActivity {
 
                             quizViewHolder.title.setText(quiz+" Challenge");
                             quizViewHolder.victory.setText(victory);
+                        }
+                        else
+                        {
+                            not_avail.setVisibility(View.VISIBLE);
+                            quiz_proogress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(MyQuiz.this, "You have not played any quiz till now", Toast.LENGTH_SHORT).show();
                         }
                     }
 

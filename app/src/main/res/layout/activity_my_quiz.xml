@@ -26,5 +26,28 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar_rec_quiz"
         android:id="@+id/record_quiz_pre"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/not_avail"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have not played any quiz till now."
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="?attr/textcolor"/>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/quiz_progress"/>
 
 </RelativeLayout>

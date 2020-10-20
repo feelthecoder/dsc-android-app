@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.Model.Donate;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -32,6 +34,7 @@ public class DonateHistoryActivity extends AppCompatActivity {
     
     TextView not;
     RecyclerView recyclerView;
+    ProgressBar donate_progress;
     DatabaseReference dRef;
     
 
@@ -50,6 +53,8 @@ public class DonateHistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate_history);
         Toolbar toolbar=findViewById(R.id.tool_donate);
+        donate_progress=findViewById(R.id.donate_progress);
+        donate_progress.setVisibility(View.VISIBLE);
         recyclerView=findViewById(R.id.donate_re);
         not=findViewById(R.id.no_donation_here);
         dRef= FirebaseDatabase.getInstance().getReference("Donation").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -89,6 +94,7 @@ public class DonateHistoryActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("payment")) {
                             not.setVisibility(View.INVISIBLE);
+                            donate_progress.setVisibility(View.INVISIBLE);
                             final String tID = Objects.requireNonNull(dataSnapshot.child("tID").getValue()).toString();
                             final String rID = Objects.requireNonNull(dataSnapshot.child("rID").getValue()).toString();
                             final String payment = Objects.requireNonNull(dataSnapshot.child("payment").getValue()).toString();
@@ -114,6 +120,11 @@ public class DonateHistoryActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+                        }
+                        else
+                        {
+                            donate_progress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(DonateHistoryActivity.this, "You have not done any donation.", Toast.LENGTH_SHORT).show();
                         }
                     }
 

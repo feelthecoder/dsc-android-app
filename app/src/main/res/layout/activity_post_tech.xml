@@ -113,7 +113,13 @@
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
-
+            <ProgressBar
+                android:id="@+id/comment_progresse"
+                android:layout_width="wrap_content"
+                android:visibility="invisible"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/comment_recycler"
         android:background="@android:color/transparent"

@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -39,6 +41,7 @@ public class MembersActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference dRef;
     TextView connect;
+    ProgressBar members_progress;
 
 
     @Override
@@ -56,6 +59,8 @@ public class MembersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_members);
         Toolbar toolbar = findViewById(R.id.tool_members);
+        members_progress=findViewById(R.id.member_progress);
+
 
         recyclerView = findViewById(R.id.members_recycler_form);
         LinearLayoutManager li= new LinearLayoutManager(getApplicationContext());
@@ -71,6 +76,7 @@ public class MembersActivity extends AppCompatActivity {
 
         dRef = FirebaseDatabase.getInstance().getReference("About").child("Members");
         if (isOnline()) {
+            members_progress.setVisibility(View.VISIBLE);
             getBoardInfo();
             connect.setVisibility(View.INVISIBLE);
         } else {
@@ -106,7 +112,7 @@ public class MembersActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("name")) {
-
+                            members_progress.setVisibility(View.INVISIBLE);
                             final String name = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String post = Objects.requireNonNull(dataSnapshot.child("post").getValue()).toString();
                             final String skills = Objects.requireNonNull(dataSnapshot.child("skills").getValue()).toString();
@@ -147,6 +153,10 @@ public class MembersActivity extends AppCompatActivity {
 
 
                             setGuide("Members","You can visit profile, Click to see.",membersViewHolder.itemView,"MEMBERS");
+                        }else
+                        {
+                            Toast.makeText(MembersActivity.this, "There are no members", Toast.LENGTH_SHORT).show();
+                            members_progress.setVisibility(View.INVISIBLE);
                         }
                     }
 

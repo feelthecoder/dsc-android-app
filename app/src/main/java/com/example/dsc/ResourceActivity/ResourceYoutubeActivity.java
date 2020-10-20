@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.ActivityWeb;
 import com.example.dsc.Model.ResultGet;
@@ -34,6 +36,7 @@ public class ResourceYoutubeActivity extends AppCompatActivity {
     TextView textView;
     DatabaseReference dRef;
     String title;
+    ProgressBar progressBar;
 
 
     @Override
@@ -51,6 +54,8 @@ public class ResourceYoutubeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resource_youtube);
         Toolbar toolbar=findViewById(R.id.tool_resource_youtube);
+        progressBar=findViewById(R.id.tube_progress);
+        progressBar.setVisibility(View.VISIBLE);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -92,6 +97,7 @@ public class ResourceYoutubeActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("link")) {
                             textView.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             final String caption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
@@ -105,6 +111,10 @@ public class ResourceYoutubeActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+                        }else
+                        {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResourceYoutubeActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 

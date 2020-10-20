@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +61,7 @@ import java.util.Objects;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -84,6 +87,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     FirebaseRecyclerOptions<TechData> options;
     View view;
     FirebaseRecyclerAdapter<TechData,TechViewHolder> adapter;
+
+    ProgressBar postProress;
+
 
 
     @Override
@@ -146,6 +152,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         initialize(view);
+
+      postProress=view.findViewById(R.id.progress_post);
         fb=view.findViewById(R.id.facebook);
         insta=view.findViewById(R.id.insta);
         twitter=view.findViewById(R.id.twitter);
@@ -209,6 +217,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Switcher");
         slideLists = new ArrayList<>();
+        postProress.setVisibility(View.VISIBLE);
         setPostTech();
         return view;
     }
@@ -245,6 +254,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("tImg")){
                             loadDrawableLike(likeRef,techViewHolder);
+
                             final String caption= Objects.requireNonNull(dataSnapshot.child("tCaption").getValue()).toString();
                             final String desc= Objects.requireNonNull(dataSnapshot.child("tDescription").getValue()).toString();
                             final String img= Objects.requireNonNull(dataSnapshot.child("tImg").getValue()).toString();
@@ -285,9 +295,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             techViewHolder.mComment.setText(comment);
                             techViewHolder.mShare.setText(share);
 
-
-
                             Glide.with(requireContext()).load(img).into(techViewHolder.mImage);
+
+                            postProress.setVisibility(View.INVISIBLE);
+
+
+
+
 
                             techViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -303,6 +317,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                                     startActivity(intent);
                                 }
                             });
+
+
                             techViewHolder.like.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -426,6 +442,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         };
 
+
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);
@@ -577,8 +598,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 if(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).hasChild("Like")){
                     techViewHolder.like.setImageResource(R.drawable.ic_liked);
 
-                }
+                }else
+                {
+                    SharedPreferences mPrefs=getContext().getSharedPreferences("MyPrefs",0);
+                    String is=mPrefs.getString("mode","not");
+                    if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES||is.equals("dark")){
+                        techViewHolder.like.setImageResource(R.drawable.ic_like_white);
 
+                    }
+                    else
+                    {
+                        techViewHolder.like.setImageResource(R.drawable.ic_like);
+                    }
+
+                }
 
             }
 

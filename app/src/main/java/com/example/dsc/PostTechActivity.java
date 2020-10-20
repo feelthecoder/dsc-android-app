@@ -1,5 +1,6 @@
 package com.example.dsc;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +51,10 @@ public class PostTechActivity extends AppCompatActivity {
     private String name,comm,pics;
     private int come;
      String id;
+     ProgressBar commentProgress;
+
+
+     public static Activity fa;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         SharedPreferences mPrefs=getSharedPreferences("MyPrefs",0);
@@ -64,6 +70,7 @@ public class PostTechActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_tech);
         Toolbar toolbar=findViewById(R.id.tool_comment);
+        commentProgress=findViewById(R.id.comment_progresse);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -93,6 +100,10 @@ public class PostTechActivity extends AppCompatActivity {
         addUser=FirebaseDatabase.getInstance().getReference("Users");
         commentT=FirebaseDatabase.getInstance().getReference("MainData").child("TechPosts").child(postID);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        commentProgress.setVisibility(View.VISIBLE);
+
+        fa=this;
 
         loadComments();
 
@@ -222,6 +233,7 @@ public class PostTechActivity extends AppCompatActivity {
                             commentViewHolder.name.setText(name);
                             commentViewHolder.comme.setText(comment);
                             Glide.with(PostTechActivity.this).load(link).into(commentViewHolder.imageView);
+                            commentProgress.setVisibility(View.INVISIBLE);
                             commentViewHolder.parent.setOnLongClickListener(new View.OnLongClickListener() {
                                 @Override
                                 public boolean onLongClick(View v) {
@@ -259,6 +271,11 @@ public class PostTechActivity extends AppCompatActivity {
                                     return true;
                                 }
                             });
+                        }
+                        else
+                        {
+                            commentProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(PostTechActivity.this, "No one commented on this post", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -301,6 +318,8 @@ public class PostTechActivity extends AppCompatActivity {
         parent=itemView.findViewById(R.id.coment_relative_id);
     }
 }
+
+
 
 }
 

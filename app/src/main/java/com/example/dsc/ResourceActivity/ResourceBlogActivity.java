@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.ActivityWeb;
 import com.example.dsc.Model.ResultGet;
@@ -35,6 +37,7 @@ public class ResourceBlogActivity extends AppCompatActivity {
     TextView textView;
     DatabaseReference dRef;
     String title;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,8 @@ public class ResourceBlogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resource_blog);
         Toolbar toolbar = findViewById(R.id.tool_resource_blog);
+        progressBar =findViewById(R.id.blog_progress);
+        progressBar.setVisibility(View.VISIBLE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -93,6 +98,7 @@ public class ResourceBlogActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("link")) {
                             textView.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             final String caption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
@@ -106,6 +112,11 @@ public class ResourceBlogActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+                        }
+                        else
+                        {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResourceBlogActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 

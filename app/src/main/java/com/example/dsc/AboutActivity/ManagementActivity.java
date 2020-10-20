@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -40,6 +42,8 @@ public class ManagementActivity extends AppCompatActivity {
     DatabaseReference dRef;
     TextView connect;
 
+    ProgressBar manage_progress;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,8 @@ public class ManagementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_management);
         Toolbar toolbar = findViewById(R.id.tool_manage);
+        manage_progress=findViewById(R.id.manage_progress);
+
 
         recyclerView = findViewById(R.id.manage_recycler_form);
         LinearLayoutManager li= new LinearLayoutManager(getApplicationContext());
@@ -69,6 +75,7 @@ public class ManagementActivity extends AppCompatActivity {
 
         dRef = FirebaseDatabase.getInstance().getReference("About").child("MTeam");
         if (isOnline()) {
+            manage_progress.setVisibility(View.VISIBLE);
             getBoardInfo();
             connect.setVisibility(View.INVISIBLE);
         } else {
@@ -104,7 +111,7 @@ public class ManagementActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("name")) {
-
+                            manage_progress.setVisibility(View.INVISIBLE);
                             final String name = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String post = Objects.requireNonNull(dataSnapshot.child("post").getValue()).toString();
                             final String skills = Objects.requireNonNull(dataSnapshot.child("skills").getValue()).toString();
@@ -145,6 +152,10 @@ public class ManagementActivity extends AppCompatActivity {
 
 
                             setGuide("Management Team","You can visit profile, Click to see.",managementViewHolder.itemView,"MANAGE");
+                        }else
+                        {
+                            manage_progress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ManagementActivity.this, "There are no members in Management Team", Toast.LENGTH_SHORT).show();
                         }
                     }
 

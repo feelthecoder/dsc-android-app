@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.ActivityWeb;
 import com.example.dsc.Model.ResultGet;
@@ -35,6 +37,7 @@ public class ResourceUdemyActivity extends AppCompatActivity {
     TextView textView;
     DatabaseReference dRef;
     String title;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,8 @@ public class ResourceUdemyActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Free Udemy Courses");
         recyclerView = findViewById(R.id.recycler_resource_udemy);
+        progressBar=findViewById(R.id.udemy_progress);
+        progressBar.setVisibility(View.VISIBLE);
         textView = findViewById(R.id.resourceudemy_text);
         title = Objects.requireNonNull(Objects.requireNonNull(getIntent().getExtras()).get("title")).toString();
         dRef = FirebaseDatabase.getInstance().getReference("Education").child(title).child("udemy");
@@ -92,6 +97,7 @@ public class ResourceUdemyActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("link")) {
                             textView.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             final String caption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
@@ -105,6 +111,10 @@ public class ResourceUdemyActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+                        }else
+                        {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResourceUdemyActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 

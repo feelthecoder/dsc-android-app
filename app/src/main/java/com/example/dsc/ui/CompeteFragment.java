@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.CRegistrationActivity;
 import com.example.dsc.CompeteDetailActivity;
@@ -47,6 +49,7 @@ public class CompeteFragment extends Fragment {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager HorizontalLayout;
     RelativeLayout connect;
+    ProgressBar competeProgress;
 
     @Override
     public void onAttach(Context context) {
@@ -59,6 +62,7 @@ public class CompeteFragment extends Fragment {
         View view=inflater.inflate(R.layout.fragment_compete, container, false);
         recyclerView=view.findViewById(R.id.compete_recycler);
         connect=view.findViewById(R.id.no_connect_compete);
+        competeProgress=view.findViewById(R.id.compete_progress);
         dRef= FirebaseDatabase.getInstance().getReference("Competitions");
         RecyclerViewLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
@@ -67,6 +71,7 @@ public class CompeteFragment extends Fragment {
         HorizontalLayout.setStackFromEnd(true);
         recyclerView.setLayoutManager(HorizontalLayout);
         if(isOnline()) {
+            competeProgress.setVisibility(View.VISIBLE);
             getCompete();
             connect.setVisibility(View.INVISIBLE);
         }
@@ -94,6 +99,8 @@ public class CompeteFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("title")) {
+
+                            competeProgress.setVisibility(View.INVISIBLE);
                             final String Caption = Objects.requireNonNull(dataSnapshot.child("title").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("pic").getValue()).toString();
                             final String shortdes = Objects.requireNonNull(dataSnapshot.child("shortdes").getValue()).toString();
@@ -148,6 +155,11 @@ public class CompeteFragment extends Fragment {
                             setGuide("Paricipate","Click to Participate in this competition.", competeViewHolder.part,"partC");
 
 
+                        }
+                        else
+                        {
+                            competeProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(getActivity(), "There are no competitions available currently", Toast.LENGTH_SHORT).show();
                         }
                     }
 

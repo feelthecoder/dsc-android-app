@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -40,6 +42,8 @@ public class DesignActivity extends AppCompatActivity {
     DatabaseReference dRef;
     TextView connect;
 
+    ProgressBar des_progress;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +60,7 @@ public class DesignActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_design);
         Toolbar toolbar = findViewById(R.id.tool_design);
-
+des_progress=findViewById(R.id.des_progress);
         recyclerView = findViewById(R.id.design_recycler_form);
         LinearLayoutManager li= new LinearLayoutManager(getApplicationContext());
         li.setReverseLayout(true);
@@ -69,6 +73,7 @@ public class DesignActivity extends AppCompatActivity {
 
         dRef = FirebaseDatabase.getInstance().getReference("About").child("DTeam");
         if (isOnline()) {
+            des_progress.setVisibility(View.VISIBLE);
             getBoardInfo();
             connect.setVisibility(View.INVISIBLE);
         } else {
@@ -106,7 +111,7 @@ public class DesignActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("name")) {
-
+                            des_progress.setVisibility(View.INVISIBLE);
                             final String name = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String post = Objects.requireNonNull(dataSnapshot.child("post").getValue()).toString();
                             final String skills = Objects.requireNonNull(dataSnapshot.child("skills").getValue()).toString();
@@ -146,6 +151,10 @@ public class DesignActivity extends AppCompatActivity {
 
 
                             setGuide("Designer Team","You can visit profile, Click to see.",designViewHolder.itemView,"DESC");
+                        }else
+                        {
+                            des_progress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(DesignActivity.this, "There are no members in Design Team", Toast.LENGTH_SHORT).show();
                         }
                     }
 

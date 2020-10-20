@@ -428,6 +428,12 @@
         android:layout_below="@+id/rel_wish"
         android:layout_marginTop="30dp"
         >
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+         android:layout_centerHorizontal="true"
+            android:id="@+id/progress_post"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/post_tech"
             android:layout_marginTop="5dp"

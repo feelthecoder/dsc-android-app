@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -39,6 +41,8 @@ public class TechnicalActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference dRef;
     TextView connect;
+    ProgressBar tech_progress;
+
 
 
     @Override
@@ -56,6 +60,8 @@ public class TechnicalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_technical);
         Toolbar toolbar = findViewById(R.id.tool_tech);
+        tech_progress=findViewById(R.id.tech_progress);
+
 
         recyclerView = findViewById(R.id.tech_recycler_form);
         LinearLayoutManager li= new LinearLayoutManager(getApplicationContext());
@@ -69,6 +75,7 @@ public class TechnicalActivity extends AppCompatActivity {
 
         dRef = FirebaseDatabase.getInstance().getReference("About").child("TTeam");
         if (isOnline()) {
+            tech_progress.setVisibility(View.VISIBLE);
             getBoardInfo();
             connect.setVisibility(View.INVISIBLE);
         } else {
@@ -105,7 +112,7 @@ public class TechnicalActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("name")) {
-
+tech_progress.setVisibility(View.INVISIBLE);
                             final String name = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String post = Objects.requireNonNull(dataSnapshot.child("post").getValue()).toString();
                             final String skills = Objects.requireNonNull(dataSnapshot.child("skills").getValue()).toString();
@@ -144,6 +151,11 @@ public class TechnicalActivity extends AppCompatActivity {
                             });
 
                             setGuide("Technical Team","You can visit profile, Click to see.",technoViewHolder.itemView,"TECH");
+                        }
+                        else
+                        {
+                            tech_progress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(TechnicalActivity.this, "There are no members in Technical Team", Toast.LENGTH_SHORT).show();
                         }
                     }
 

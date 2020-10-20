@@ -7,6 +7,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.dsc.Adapters.MessageAdapter;
 import com.example.dsc.Model.Chat;
@@ -40,6 +42,7 @@ public class ChatActivity extends AppCompatActivity {
     List<Chat> mChat;
     DatabaseReference reference;
     String mg;
+    ProgressBar chatProgress;
 
 
     @Override
@@ -56,6 +59,9 @@ public class ChatActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        chatProgress=findViewById(R.id.chat_progress);
+        chatProgress.setVisibility(View.VISIBLE);
 
         Toolbar toolbar=findViewById(R.id.tool_chat);
         setSupportActionBar(toolbar);
@@ -150,10 +156,15 @@ public class ChatActivity extends AppCompatActivity {
                     if((Objects.requireNonNull(chat).getReceiver().equals(myid) && chat.getSender().equals(userid) )|| (chat.getReceiver().equals(userid)&& chat.getSender().equals(myid))){
                         mChat.add(chat);
                     }
+                    else
+                    {
+                        Toast.makeText(ChatActivity.this, "You have not asked any questions/doubts till now", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
                 messageAdapter= new MessageAdapter(ChatActivity.this,mChat,imageUrl);
                 msg.setAdapter(messageAdapter);
+                chatProgress.setVisibility(View.INVISIBLE);
 
 
             }

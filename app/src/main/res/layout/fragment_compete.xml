@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/compete_recycler"
         android:scrollbars="none"
@@ -33,4 +34,10 @@
             android:textSize="20sp"
             android:text="No Internet Connection/ Slow Internet Connection "/>
     </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:id="@+id/compete_progress"/>
 </RelativeLayout>

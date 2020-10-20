@@ -56,5 +56,10 @@
         android:textSize="20sp"
         android:text="You have not submitted any project."
         />
-
+<ProgressBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/project_progress"
+    android:layout_centerInParent="true"
+    android:visibility="invisible"/>
 </RelativeLayout>

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.ActivityWeb;
 import com.example.dsc.Model.ResultGet;
@@ -35,6 +37,7 @@ public class ResourceNPTELActivity extends AppCompatActivity {
     TextView textView;
     DatabaseReference dRef;
     String title;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class ResourceNPTELActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resource_n_p_t_e_l);
         Toolbar toolbar=findViewById(R.id.tool_resource_nptel);
+        progressBar=findViewById(R.id.nptel_progress);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -64,7 +68,7 @@ public class ResourceNPTELActivity extends AppCompatActivity {
         title=getIntent().getExtras().get("title").toString();
         dRef= FirebaseDatabase.getInstance().getReference("Education").child(title).child("nptel");
         textView.setVisibility(View.VISIBLE);
-
+        progressBar.setVisibility(View.VISIBLE);
         getNPTELDataFromFirebase();
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +96,7 @@ public class ResourceNPTELActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("link")) {
                             textView.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             final String caption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
@@ -105,6 +110,10 @@ public class ResourceNPTELActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+                        }else
+                        {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResourceNPTELActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 

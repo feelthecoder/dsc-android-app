@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.ActivityWeb;
 import com.example.dsc.Model.ResultGet;
@@ -34,6 +36,7 @@ public class ResourceDSCActivity extends AppCompatActivity {
     TextView textView;
     DatabaseReference dRef;
     String title;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,8 @@ public class ResourceDSCActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("DSC Tutor");
+        progressBar=findViewById(R.id.dsc_progress);
+        progressBar.setVisibility(View.VISIBLE);
         recyclerView = findViewById(R.id.recycler_resource_dsc);
         LinearLayoutManager li= new LinearLayoutManager(getApplicationContext());
         li.setReverseLayout(true);
@@ -91,6 +96,7 @@ public class ResourceDSCActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("link")) {
                             textView.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             final String caption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
@@ -104,6 +110,11 @@ public class ResourceDSCActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+                        }
+                        else
+                        {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResourceDSCActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 

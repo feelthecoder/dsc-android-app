@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.Model.TrainGet;
 import com.example.dsc.R;
@@ -48,6 +50,8 @@ public class TrainingFragment extends Fragment {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager HorizontalLayout;
     RelativeLayout connect;
+    ProgressBar trainProgress;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -59,6 +63,8 @@ public class TrainingFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_training, container, false);
         recyclerView=view.findViewById(R.id.train_recycler);
         connect=view.findViewById(R.id.no_connect_train);
+        trainProgress=view.findViewById(R.id.train_progress);
+        trainProgress.setVisibility(View.VISIBLE);
         dRef= FirebaseDatabase.getInstance().getReference("Training");
         RecyclerViewLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
@@ -92,6 +98,7 @@ public class TrainingFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("title")) {
+                            trainProgress.setVisibility(View.INVISIBLE);
                             final String Caption = Objects.requireNonNull(dataSnapshot.child("title").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("pic").getValue()).toString();
                             final String shortdes = Objects.requireNonNull(dataSnapshot.child("shortdes").getValue()).toString();
@@ -151,6 +158,11 @@ public class TrainingFragment extends Fragment {
 
 
 
+                        }
+                        else
+                        {
+                            trainProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(getActivity(), "There are no trainings available currently", Toast.LENGTH_SHORT).show();
                         }
                     }
 

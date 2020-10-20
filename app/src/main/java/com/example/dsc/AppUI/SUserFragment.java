@@ -21,6 +21,8 @@ import com.example.dsc.R;
 import com.example.dsc.SettingsActivity.EditProfileActivity;
 import com.example.dsc.SettingsActivity.ViewProfileActivity;
 import com.example.dsc.login;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -28,7 +30,10 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
@@ -263,80 +268,196 @@ public class SUserFragment extends Fragment {
     private void deleteAccount() {
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
-        alert.setTitle("Delete Account");
+        if(providerId.equals("google.com")){
 
-        alert.setMessage("Are you sure to delete your account ? You will lose your data on our servers.");
-        alert.setIcon(R.drawable.sharp_account_circle_black_18dp);
-        final EditText input = new EditText(getActivity());
-        input.setHint("Enter Email");
-        final EditText input_old = new EditText(getActivity());
-        input_old.setHint("Enter Password");
-        input_old.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        LinearLayout layout = new LinearLayout(getContext());
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.addView(input);
-        layout.addView(input_old);
-        alert.setView(layout);
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+            alert.setTitle("Delete Account");
+
+            alert.setMessage("Are you sure to delete your account ? You will lose your personal data on our servers.");
+            alert.setIcon(R.drawable.sharp_account_circle_black_18dp);
 
 
 
-        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                email = input.getText().toString();
-                password= input_old.getText().toString();
-                if (email.isEmpty()) {
-                    input.setError("Email is required");
-                    input.requestFocus();
-                    return;
-                }
-                if (password.length() < 7) {
-                    input_old.setError("Password length should be greater than 7");
-                    input_old.requestFocus();
-                    return;
-                }
-                if (password.isEmpty()) {
-                    input_old.setError("Password is required");
-                    input_old.requestFocus();
-                    return;
-                }
+            alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
 
-                if(user.getProviderId().equals("password")){
-                    credential = EmailAuthProvider
-                            .getCredential(email, password);
-                }
-
-                progressBar.setVisibility(View.VISIBLE);
-                user.reauthenticate(credential)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getContext());
+                    if (acct != null) {
+                        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+                        progressBar.setVisibility(View.VISIBLE);
+                        user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                user.delete()
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if (task.isSuccessful()) {
-                                                    progressBar.setVisibility(INVISIBLE);
-                                                    Toast.makeText(getActivity(), "Your account is deleted!", Toast.LENGTH_SHORT).show();
-                                                    startActivity(new Intent(getActivity(), login.class));
-                                                    getActivity().finish();
-                                                }
-                                            }
-                                        });
+                                if (task.isSuccessful()) {
+                                    DatabaseReference db=FirebaseDatabase.getInstance().getReference("https://developer-student-club-22121.firebaseio.com/");
+                                    db.child("Users").child(user.getUid()).removeValue();
+                                    db.child("Achievment").child(user.getUid()).removeValue();
+                                    db.child("UserFormHistory").child(user.getUid()).removeValue();
+                                    progressBar.setVisibility(INVISIBLE);
+                                    Toast.makeText(getActivity(), "Your account is deleted!", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getActivity(), login.class));
+                                    getActivity().finish();
 
+                                }
+                                else
+                                {
+                                    Toast.makeText(getActivity(), "Unable to delete account", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(INVISIBLE);
+                                }
                             }
                         });
-            }
-        });
+                    }
 
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                Toast.makeText(getActivity(), "Cancelled.", Toast.LENGTH_SHORT).show();
-            }
-        });
+                }
+            });
 
-        alert.show();
+            alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                }
+            });
+
+            alert.show();
+
+
+        }
+
+
+        if(providerId.equals("password")){
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+            alert.setTitle("Delete Account");
+
+            alert.setMessage("Are you sure to delete your account ? You will lose your personal data on our servers.");
+            alert.setIcon(R.drawable.sharp_account_circle_black_18dp);
+            final EditText input = new EditText(getActivity());
+            input.setHint("Enter Email");
+            final EditText input_old = new EditText(getActivity());
+            input_old.setHint("Enter Password");
+            input_old.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            LinearLayout layout = new LinearLayout(getContext());
+            layout.setOrientation(LinearLayout.VERTICAL);
+            layout.addView(input);
+            layout.addView(input_old);
+            alert.setView(layout);
+
+
+
+            alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    email = input.getText().toString();
+                    password= input_old.getText().toString();
+                    if (email.isEmpty()) {
+                        input.setError("Email is required");
+                        input.requestFocus();
+                        return;
+                    }
+                    if (password.length() < 7) {
+                        input_old.setError("Password length should be greater than 7");
+                        input_old.requestFocus();
+                        return;
+                    }
+                    if (password.isEmpty()) {
+                        input_old.setError("Password is required");
+                        input_old.requestFocus();
+                        return;
+                    }
+
+                        credential = EmailAuthProvider
+                                .getCredential(email, password);
+
+                    progressBar.setVisibility(View.VISIBLE);
+
+
+                    user.reauthenticate(credential)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    user.delete()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        DatabaseReference db=FirebaseDatabase.getInstance().getReference("https://developer-student-club-22121.firebaseio.com/");
+                                                        db.child("Users").child(user.getUid()).removeValue();
+                                                        db.child("Achievment").child(user.getUid()).removeValue();
+                                                        db.child("UserFormHistory").child(user.getUid()).removeValue();
+                                                        progressBar.setVisibility(INVISIBLE);
+                                                        Toast.makeText(getActivity(), "Your account is deleted!", Toast.LENGTH_SHORT).show();
+                                                        startActivity(new Intent(getActivity(), login.class));
+                                                        getActivity().finish();
+                                                    }
+                                                }
+                                            });
+
+                                }
+                            });
+                }
+            });
+
+            alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                }
+            });
+
+            alert.show();
+
+        }
+
+
+        if (providerId.equals("phone")){
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+            alert.setTitle("Delete Account");
+
+            alert.setMessage("Are you sure to delete your account ? You will lose your personal data on our servers.");
+            alert.setIcon(R.drawable.sharp_account_circle_black_18dp);
+
+
+
+
+            alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    progressBar.setVisibility(View.VISIBLE);
+
+                    user.delete()
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        DatabaseReference db=FirebaseDatabase.getInstance().getReference("https://developer-student-club-22121.firebaseio.com/");
+                                        db.child("Users").child(user.getUid()).removeValue();
+                                        db.child("Achievment").child(user.getUid()).removeValue();
+                                        db.child("UserFormHistory").child(user.getUid()).removeValue();
+                                        progressBar.setVisibility(INVISIBLE);
+                                        Toast.makeText(getActivity(), "Your account is deleted!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getActivity(), login.class));
+                                        getActivity().finish();
+                                    }
+                                }
+                            });
+
+                }
+            });
+
+            alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                }
+            });
+
+            alert.show();
+
+
+        }
+
+
 
 
 

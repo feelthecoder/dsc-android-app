@@ -55,6 +55,7 @@ public class Register_User extends AppCompatActivity {
     String phone, dob;
     EditText fName, lName, mail, mob, uName, nPass, cPass, dateOfBirth;
     RadioGroup radioSexGroup;
+    RadioButton sex;
     String profileImageUrl;
     CircularImageView imageView;
     private FirebaseAuth mAuth;
@@ -82,6 +83,7 @@ public class Register_User extends AppCompatActivity {
         ppBar = findViewById(R.id.ppBaar);
         imageView = findViewById(R.id.imagelogo1);
         mAuth = FirebaseAuth.getInstance();
+        fa=this;
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,7 +113,6 @@ public class Register_User extends AppCompatActivity {
         nPass = findViewById(R.id.edtx6);
         pass = nPass.getText().toString();
         fName = findViewById(R.id.edtx1);
-        fa=this;
         firstName = fName.getText().toString();
         lName = findViewById(R.id.edtx2);
         lastName = lName.getText().toString();
@@ -124,13 +125,12 @@ public class Register_User extends AppCompatActivity {
         dateOfBirth = findViewById(R.id.datepick);
         dob = dateOfBirth.getText().toString();
         radioSexGroup = findViewById(R.id.radiog);
-        radioSexGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                gender = ((RadioButton) findViewById(radioSexGroup.getCheckedRadioButtonId())).getText().toString();
-                Toast.makeText(Register_User.this, "selected :" + gender, Toast.LENGTH_SHORT).show();
-            }
-        });
+
+        int selectedID=radioSexGroup.getCheckedRadioButtonId();
+        sex=findViewById(selectedID);
+        gender=sex.getText().toString();
+
+
         if (firstName.isEmpty()) {
             fName.setError("First Name is Required");
             fName.requestFocus();
@@ -196,10 +196,11 @@ public class Register_User extends AppCompatActivity {
             dateOfBirth.requestFocus();
             return;
         }
+
         if (gender.isEmpty()) {
-            Toast.makeText(this, "Select your gender", Toast.LENGTH_SHORT).show();
             return;
         }
+
         if(profileImageUrl.isEmpty()){
             Toast.makeText(this, "Please add profile to continue", Toast.LENGTH_SHORT).show();
             return;
@@ -231,7 +232,6 @@ public class Register_User extends AppCompatActivity {
                                         Intent intent = new Intent(Register_User.this, Main1Activity.class);
                                         startActivity(intent);
                                         finish();
-                                        progressBarWheel.dismiss();
                                     }
                                 });
                             }
@@ -271,9 +271,9 @@ public class Register_User extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
 
-                            Toast.makeText(Register_User.this, "Verification Email Sent.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register_User.this, "Verification Email Sent", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(Register_User.this, "Verification Email not sent.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register_User.this, "Verification Email not sent", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

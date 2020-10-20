@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.EventDetailActivity;
 import com.example.dsc.Model.EventGet;
@@ -48,6 +50,7 @@ public class EventsFragment extends Fragment {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager HorizontalLayout;
     RelativeLayout connect;
+    ProgressBar eventProgress;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -62,6 +65,8 @@ public class EventsFragment extends Fragment {
         dRef= FirebaseDatabase.getInstance().getReference("Events");
         RecyclerViewLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+        eventProgress=view.findViewById(R.id.event_progress);
+        eventProgress.setVisibility(View.VISIBLE);
         HorizontalLayout = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         HorizontalLayout.setReverseLayout(true);
         HorizontalLayout.setStackFromEnd(true);
@@ -94,6 +99,7 @@ public class EventsFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("title")) {
+                            eventProgress.setVisibility(View.INVISIBLE);
                             final String Caption = Objects.requireNonNull(dataSnapshot.child("title").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("pic").getValue()).toString();
                             final String shortdes = Objects.requireNonNull(dataSnapshot.child("shortdes").getValue()).toString();
@@ -149,6 +155,11 @@ public class EventsFragment extends Fragment {
 
 
 
+                        }
+                        else
+                        {
+                            eventProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(getActivity(), "There are no events available currently", Toast.LENGTH_SHORT).show();
                         }
                     }
 

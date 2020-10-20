@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +53,7 @@ public class ResourceStandardBookActivity extends AppCompatActivity {
     TextView textView;
     DatabaseReference dRef;
     String title;
+    ProgressBar progressBar;
 
 
     private static final String CHANNEL_ID="BOOK";
@@ -78,6 +80,8 @@ public class ResourceStandardBookActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Standard Books");
 
         recyclerView = findViewById(R.id.recycler_resource_book);
+        progressBar=findViewById(R.id.book_progress);
+        progressBar.setVisibility(View.VISIBLE);
 
         //Creating Notification Channel for below oreo versions
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
@@ -123,6 +127,7 @@ public class ResourceStandardBookActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("link")) {
                             textView.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             final String caption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
@@ -159,6 +164,10 @@ public class ResourceStandardBookActivity extends AppCompatActivity {
                                     }
                                 }
                             });
+                        }else
+                        {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResourceStandardBookActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 

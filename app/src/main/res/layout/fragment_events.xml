@@ -33,4 +33,10 @@
             android:textSize="20sp"
             android:text="No Intenet Connection/ Slow Internet Connection "/>
     </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:id="@+id/event_progress"/>
 </RelativeLayout>

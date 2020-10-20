@@ -84,18 +84,18 @@ public class PeopleLikedActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("Image")) {
-                            final String name= Objects.requireNonNull(dataSnapshot.child("Name").getValue()).toString();
-                            final String profile= Objects.requireNonNull(dataSnapshot.child("Image").getValue()).toString();
+                            String namee= Objects.requireNonNull(dataSnapshot.child("Name").getValue()).toString();
+                            String profile= Objects.requireNonNull(dataSnapshot.child("Image").getValue()).toString();
 
 
-                            likeViewHolder.name.setText(name);
+                            likeViewHolder.name.setText(namee);
                             Glide.with(getApplicationContext()).load(profile).into(likeViewHolder.profile);
 
                             likeViewHolder.parent.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     Snackbar snackbar = Snackbar
-                                            .make(likeViewHolder.parent, "This is Liked"+ " by "+name, Snackbar.LENGTH_LONG);
+                                            .make(likeViewHolder.parent, "This is Liked"+ " by "+namee, Snackbar.LENGTH_LONG);
                                     snackbar.show();
                                 }
                             });
@@ -147,8 +147,7 @@ private static class LikeViewHolder extends RecyclerView.ViewHolder {
 
     @Override
     public void onBackPressed() {
-        finish();
-        super.onBackPressed();
+        this.finish();
     }
 }
 

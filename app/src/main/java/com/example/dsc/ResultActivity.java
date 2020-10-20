@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dsc.Model.ResultGet;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -38,6 +40,7 @@ public class ResultActivity extends AppCompatActivity {
     DatabaseReference dRef;
      TextView connect;
      TextView txtResult;
+     ProgressBar resultProgress;
 
 
     @Override
@@ -54,6 +57,8 @@ public class ResultActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        resultProgress=findViewById(R.id.result_progress);
         Toolbar toolbar=findViewById(R.id.tool_result);
         connect=findViewById(R.id.co_rel);
         setSupportActionBar(toolbar);
@@ -69,6 +74,8 @@ public class ResultActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(li);
 
         if(isOnline()) {
+            resultProgress.setVisibility(View.VISIBLE);
+
             getMyResults();
             connect.setVisibility(View.INVISIBLE);
         }
@@ -107,6 +114,7 @@ public class ResultActivity extends AppCompatActivity {
                             final String resultCaption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
+                            resultProgress.setVisibility(View.INVISIBLE);
 
                             resultViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -117,6 +125,11 @@ public class ResultActivity extends AppCompatActivity {
                                 }
                             });
                             resultViewHolder.mTitle.setText(resultCaption);
+                        }
+                        else
+                        {
+                            resultProgress.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResultActivity.this, "Results data not available", Toast.LENGTH_SHORT).show();
                         }
                     }
 

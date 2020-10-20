@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.dsc.SettingsActivity.EditProfileActivity;
 import com.example.dsc.ui.AboutFragment;
 import com.example.dsc.ui.CompeteFragment;
 import com.example.dsc.ui.DonateFragment;
@@ -48,6 +49,7 @@ import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -129,6 +131,9 @@ public class Main1Activity extends AppCompatActivity implements NavigationView.O
         formateed_date=day+"/"+month;
         mAuth = FirebaseAuth.getInstance();
 
+
+
+
         String folder_main = "DSC";
 
         File f = new File(Environment.getExternalStorageDirectory(), folder_main);
@@ -149,6 +154,46 @@ public class Main1Activity extends AppCompatActivity implements NavigationView.O
             manager.createNotificationChannel(channel);
         }
 
+DatabaseReference db=FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().toString());
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    if(dataSnapshot.child("user").toString().equals("userdsc") && dataSnapshot.child("dob").toString().equals("08/06/2019")) {
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Main1Activity.this);
+                        alertDialog.setTitle("Complete Profile");
+                        alertDialog.setMessage("Please complete your profile to continue using this app otherwise app will exit. It will take one minutes to complete profile.");
+                        alertDialog.setIcon(R.drawable.twotone_copyright_black_18dp);
+
+                        alertDialog.setPositiveButton("Edit Profile", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent in=new Intent(getApplicationContext(), EditProfileActivity.class);
+                                startActivity(in);
+                            }
+                        });
+
+                        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(Main1Activity.this, "App will exit now", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Intent.ACTION_MAIN);
+                                intent.addCategory(Intent.CATEGORY_HOME);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();
+
+                            }
+                        });
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         uCurrent=new ArrayList<>();
         databaseReference= FirebaseDatabase.getInstance().getReference("Users");
@@ -536,13 +581,21 @@ public void onClick(DialogInterface dialog, int which) {
         private void checkIfEmailVerified()
         {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+                String providerId = null;
             assert user != null;
-            if (!user.isEmailVerified())
+            for (UserInfo profile : user.getProviderData()) {
+                providerId = profile.getProviderId();
+            }
+
+            assert providerId != null;
+            if(providerId.equals("password"))
+            {
+                if (!user.isEmailVerified())
                 {
 
-                        Toast.makeText(Main1Activity.this, "Email is not verified.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main1Activity.this, "Email is not verified", Toast.LENGTH_SHORT).show();
                 }
+            }
         }
 
     @Override

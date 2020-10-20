@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,7 +52,7 @@ public class ResourcePDFActivity extends AppCompatActivity {
     DatabaseReference dRef;
     RecyclerView recyclerView;
     TextView textView;
-
+ProgressBar progressBar;
 
     private static final String CHANNEL_ID="PDF";
     private static final String CHANNEL_NAME="EDUCATION";
@@ -79,7 +80,8 @@ public class ResourcePDFActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("PDF Books");
-
+progressBar=findViewById(R.id.pdf_progress);
+progressBar.setVisibility(View.VISIBLE);
 
         //Creating Notification Channel for below oreo versions
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
@@ -126,6 +128,7 @@ public class ResourcePDFActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("link")) {
                             textView.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             final String caption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("link").getValue()).toString();
 
@@ -164,6 +167,10 @@ public class ResourcePDFActivity extends AppCompatActivity {
                                     }
                                 }
                             });
+                        }else
+                        {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Toast.makeText(ResourcePDFActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 
