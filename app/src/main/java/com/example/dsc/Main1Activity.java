@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.dsc.SettingsActivity.EditProfileActivity;
 import com.example.dsc.ui.AboutFragment;
 import com.example.dsc.ui.CompeteFragment;
 import com.example.dsc.ui.DonateFragment;
@@ -153,47 +152,6 @@ public class Main1Activity extends AppCompatActivity implements NavigationView.O
             NotificationManager manager= getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
-
-DatabaseReference db=FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child("user").exists()){
-                    if(Objects.requireNonNull(dataSnapshot.child("user").getValue()).toString().equals("userdsc") && Objects.requireNonNull(dataSnapshot.child("dob").getValue()).toString().equals("08/06/2019")) {
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Main1Activity.this);
-                        alertDialog.setTitle("Complete Profile");
-                        alertDialog.setMessage("Please complete your profile to continue using this app otherwise app will exit. It will take one minutes to complete profile.");
-                        alertDialog.setIcon(R.drawable.twotone_copyright_black_18dp);
-
-                        alertDialog.setPositiveButton("Edit Profile", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent in=new Intent(getApplicationContext(), EditProfileActivity.class);
-                                startActivity(in);
-                            }
-                        });
-
-                        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(Main1Activity.this, "App will exit now", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Intent.ACTION_MAIN);
-                                intent.addCategory(Intent.CATEGORY_HOME);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                finish();
-
-                            }
-                        });
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
         uCurrent=new ArrayList<>();
         databaseReference= FirebaseDatabase.getInstance().getReference("Users");
