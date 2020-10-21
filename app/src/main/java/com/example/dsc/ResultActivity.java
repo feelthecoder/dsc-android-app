@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dsc.Model.ResultGet;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -75,7 +74,6 @@ public class ResultActivity extends AppCompatActivity {
 
         if(isOnline()) {
             resultProgress.setVisibility(View.VISIBLE);
-
             getMyResults();
             connect.setVisibility(View.INVISIBLE);
         }
@@ -126,11 +124,6 @@ public class ResultActivity extends AppCompatActivity {
                             });
                             resultViewHolder.mTitle.setText(resultCaption);
                         }
-                        else
-                        {
-                            resultProgress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(ResultActivity.this, "Results data not available", Toast.LENGTH_SHORT).show();
-                        }
                     }
 
                     @Override
@@ -151,6 +144,7 @@ public class ResultActivity extends AppCompatActivity {
         };
 
 
+        resultProgress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

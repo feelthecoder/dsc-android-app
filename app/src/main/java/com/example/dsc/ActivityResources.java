@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.dsc.Model.ResUpload;
@@ -42,7 +43,7 @@ public class ActivityResources extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference dRef;
     TextView txtProject;
-
+ProgressBar res_progress;
 
     private static final String CHANNEL_ID = "LIBRARY";
     private static final String CHANNEL_NAME = "Resources";
@@ -62,7 +63,7 @@ public class ActivityResources extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources);
         Toolbar toolbar = findViewById(R.id.tool_res);
-
+res_progress=findViewById(R.id.res_progress);
         txtProject = findViewById(R.id.no_res_here);
         txtProject.setVisibility(View.VISIBLE);
         dRef = FirebaseDatabase.getInstance().getReference("SubmittedResources").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
@@ -85,7 +86,7 @@ public class ActivityResources extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         getSupportActionBar().setTitle("Submitted Resources");
-
+res_progress.setVisibility(View.VISIBLE);
         getMyResources();
 
 
@@ -116,6 +117,7 @@ public class ActivityResources extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("status")) {
                             txtProject.setVisibility(View.INVISIBLE);
+                            res_progress.setVisibility(View.INVISIBLE);
                             final String titleCaption = Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String link = Objects.requireNonNull(dataSnapshot.child("url").getValue()).toString();
                             String status = Objects.requireNonNull(dataSnapshot.child("status").getValue()).toString();
@@ -170,7 +172,7 @@ public class ActivityResources extends AppCompatActivity {
             }
         };
 
-
+res_progress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

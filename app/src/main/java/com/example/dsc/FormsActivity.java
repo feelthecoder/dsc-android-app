@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dsc.Model.RegistrationForm;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -60,7 +59,6 @@ public class FormsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.tool_formss);
 
         formsProgress=findViewById(R.id.progress_forms);
-        formsProgress.setVisibility(View.VISIBLE);
 
         recyclerView = findViewById(R.id.forms_recycler_form);
        LinearLayoutManager li= new LinearLayoutManager(getApplicationContext());
@@ -75,6 +73,7 @@ public class FormsActivity extends AppCompatActivity {
 
         dRef = FirebaseDatabase.getInstance().getReference("UserFormHistory").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         if (isOnline()) {
+            formsProgress.setVisibility(View.VISIBLE);
             getFormsHistory();
             connect.setVisibility(View.INVISIBLE);
         } else {
@@ -150,11 +149,7 @@ public class FormsActivity extends AppCompatActivity {
                             });
 
                         }
-                        else
-                        {
-                            formsProgress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(FormsActivity.this, "You have not submitted any form", Toast.LENGTH_SHORT).show();
-                        }
+
                     }
 
                     @Override
@@ -174,6 +169,8 @@ public class FormsActivity extends AppCompatActivity {
             }
         };
 
+
+        formsProgress.setVisibility(View.INVISIBLE);
 
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);

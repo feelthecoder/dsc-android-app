@@ -42,7 +42,7 @@ public class eResourceActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle(tit);
         title=tit.toLowerCase().replace(" ","").replace("++","plusplus").replace("#","sharp");
-        ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.r_details, list_resource);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.r_details, list_resource);
         ListView listView =findViewById(R.id.resource_list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

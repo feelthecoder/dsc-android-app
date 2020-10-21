@@ -24,7 +24,7 @@ public class slide_layout_1 extends Fragment {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("https://dscvit.com/"));
+                intent.setData(Uri.parse("https://www.dscrecbijnor.com/"));
                 startActivity(intent);
             }
         });

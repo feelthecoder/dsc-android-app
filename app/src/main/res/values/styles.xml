@@ -122,20 +122,6 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="AppTheme.AppBarOverlay"></style>
-
-    <style name="FullscreenTheme" parent="AppTheme">
-        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowBackground">@null</item>
-        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
-        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
-    </style>
-
-    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
-    </style>
-
     <style name="DrawerLight" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/black_color</item>
     </style>
@@ -145,11 +131,6 @@
     <style name="DLight" parent="ThemeOverlay.AppCompat.Dialog.Alert">
         <item name="android:textColor">@color/black_color</item>
     </style>
-    <style name="DDark" parent="ThemeOverlay.AppCompat.Dialog.Alert">
-        <item name="android:textColor">@color/colorWhite</item>
-    </style>
-
-
 
 
 </resources>

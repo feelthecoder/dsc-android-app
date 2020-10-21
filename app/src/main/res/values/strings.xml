@@ -13,7 +13,6 @@
     which is formerly known as Dr. Bhimrao Ambedkar Engineering College for Information Technology. To know more about this college please visit
     the website by clicking following button or you can visit https://recb.ac.in .</string>
     <string name="intro3"> Join Us</string>
-    <string name="app_id">2643876289192147</string>
     <string name="des4">Join this club for skills development and contribute to your own society in many ways. i.e. by teaching skills to other students,etc. </string>
     <string name="des5">Our Motto </string>
     <string name="mot">Come Together..Learn Together..Grow Together..</string>
@@ -37,7 +36,4 @@
     <string name="user_settings">User Settings</string>
     <string name="app_settings">App Settings</string>
 
-    <string name="title_activity_main_quiz">MainQuizActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

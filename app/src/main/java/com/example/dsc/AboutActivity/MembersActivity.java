@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -153,10 +152,6 @@ public class MembersActivity extends AppCompatActivity {
 
 
                             setGuide("Members","You can visit profile, Click to see.",membersViewHolder.itemView,"MEMBERS");
-                        }else
-                        {
-                            Toast.makeText(MembersActivity.this, "There are no members", Toast.LENGTH_SHORT).show();
-                            members_progress.setVisibility(View.INVISIBLE);
                         }
                     }
 
@@ -178,6 +173,8 @@ public class MembersActivity extends AppCompatActivity {
         };
 
 
+
+        members_progress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

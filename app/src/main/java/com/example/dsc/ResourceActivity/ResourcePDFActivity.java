@@ -167,10 +167,6 @@ progressBar.setVisibility(View.VISIBLE);
                                     }
                                 }
                             });
-                        }else
-                        {
-                            progressBar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(ResourcePDFActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -191,7 +187,7 @@ progressBar.setVisibility(View.VISIBLE);
             }
         };
 
-
+        progressBar.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

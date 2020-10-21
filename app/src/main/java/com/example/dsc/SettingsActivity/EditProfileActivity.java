@@ -96,6 +96,8 @@ public class EditProfileActivity extends AppCompatActivity {
         tDP=findViewById(R.id.profile_score_edit_a);
         pImage=findViewById(R.id.profile_image_edit);
 
+        progressBar.setVisibility(VISIBLE);
+
         submit=findViewById(R.id.button_save_profile);
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         for (UserInfo profile : user.getProviderData()) {
@@ -220,7 +222,7 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.hasChild("displayName")){
-
+                    progressBar.setVisibility(View.INVISIBLE);
                     name= Objects.requireNonNull(dataSnapshot.child("displayName").getValue()).toString();
                     username= Objects.requireNonNull(dataSnapshot.child("user").getValue()).toString();
                     mobile= Objects.requireNonNull(dataSnapshot.child("phone").getValue()).toString();

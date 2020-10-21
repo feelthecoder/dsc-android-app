@@ -543,7 +543,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         web.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.google.com");
+                Uri uri = Uri.parse("https://www.dscrecbijnor.com");
                 Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
 
                 likeIng.setPackage(" /data/app/com.google.android.googlequicksearchbox-1.apk=com.google.android.googlequicksearchbox");
@@ -552,7 +552,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     startActivity(likeIng);
                 } catch (ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("https://twitter.com/dscrec")));
+                            Uri.parse("https://www.dscrecbijnor.com")));
                 }
 
             }

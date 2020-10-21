@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -152,11 +151,8 @@ public class ManagementActivity extends AppCompatActivity {
 
 
                             setGuide("Management Team","You can visit profile, Click to see.",managementViewHolder.itemView,"MANAGE");
-                        }else
-                        {
-                            manage_progress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(ManagementActivity.this, "There are no members in Management Team", Toast.LENGTH_SHORT).show();
                         }
+
                     }
 
                     @Override
@@ -176,7 +172,7 @@ public class ManagementActivity extends AppCompatActivity {
             }
         };
 
-
+        manage_progress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

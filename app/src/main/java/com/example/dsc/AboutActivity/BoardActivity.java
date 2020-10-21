@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -150,9 +149,6 @@ board_progress=findViewById(R.id.board_progress);
                             });
 
                             setGuide("Board","You can visit profile, Click to see.",boardViewHolder.itemView,"BOARD");
-                        }else{
-                            board_progress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(BoardActivity.this, "There are no members in Board", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -173,7 +169,7 @@ board_progress=findViewById(R.id.board_progress);
             }
         };
 
-
+        board_progress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

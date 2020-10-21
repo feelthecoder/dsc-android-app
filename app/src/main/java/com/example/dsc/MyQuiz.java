@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dsc.Model.HistoryModel;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -39,6 +38,7 @@ public class MyQuiz extends AppCompatActivity {
    public static Activity fa;
    RelativeLayout not_avail;
    ProgressBar quiz_proogress;
+   Boolean x=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,9 @@ public class MyQuiz extends AppCompatActivity {
         li.setReverseLayout(true);
         li.setStackFromEnd(true);
         recyclerView.setLayoutManager(li);
-        getMyQuiz();
+
+            not_avail.setVisibility(View.VISIBLE);
+            getMyQuiz();
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +99,7 @@ public class MyQuiz extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("quiz")) {
                             quiz_proogress.setVisibility(View.INVISIBLE);
+                            not_avail.setVisibility(View.INVISIBLE);
                              String quiz = Objects.requireNonNull(dataSnapshot.child("quiz").getValue()).toString();
                             String score = Objects.requireNonNull(dataSnapshot.child("correct").getValue()).toString();
                             String date = Objects.requireNonNull(dataSnapshot.child("date").getValue()).toString();
@@ -118,12 +121,6 @@ public class MyQuiz extends AppCompatActivity {
                             quizViewHolder.title.setText(quiz+" Challenge");
                             quizViewHolder.victory.setText(victory);
                         }
-                        else
-                        {
-                            not_avail.setVisibility(View.VISIBLE);
-                            quiz_proogress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(MyQuiz.this, "You have not played any quiz till now", Toast.LENGTH_SHORT).show();
-                        }
                     }
 
                     @Override
@@ -142,7 +139,8 @@ public class MyQuiz extends AppCompatActivity {
             }
         };
 
-
+        quiz_proogress.setVisibility(View.INVISIBLE);
+        x=false;
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

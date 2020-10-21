@@ -34,6 +34,7 @@
             android:textColor="?attr/textcolor"
             android:textAlignment="center"
         android:layout_width="match_parent"
+            android:textColorHint="?attr/textcolor"
         android:layout_height="45dp"
         android:layout_margin="8dp"
         android:hint="Enter Donation Amount"

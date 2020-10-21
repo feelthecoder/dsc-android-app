@@ -192,10 +192,6 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
                             setGuide("Spandan Events","Swipe to see more events and click to see details.", spandanViewHolder.mDescription,"swipeTS");
                             setGuide("Paricipate","Click to Participate in this competition.", spandanViewHolder.btn,"partTS");
                         }
-                        else{
-                            spaProgress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(getActivity(), "There are no events available currently", Toast.LENGTH_SHORT).show();
-                        }
                     }
 
                     @Override
@@ -214,6 +210,7 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
             }
         };
 
+        spaProgress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

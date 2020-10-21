@@ -272,11 +272,7 @@ public class PostTechActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                        else
-                        {
-                            commentProgress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(PostTechActivity.this, "No one commented on this post", Toast.LENGTH_SHORT).show();
-                        }
+
                     }
 
                     @Override
@@ -294,9 +290,9 @@ public class PostTechActivity extends AppCompatActivity {
                 PostTechActivity.CommentViewHolder commentViewHolder= new CommentViewHolder(view);
                 return commentViewHolder;
             }
+
         };
-
-
+                commentProgress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         adapter.startListening();
 

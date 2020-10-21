@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dsc.Model.Donate;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -121,11 +120,6 @@ public class DonateHistoryActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                        else
-                        {
-                            donate_progress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(DonateHistoryActivity.this, "You have not done any donation.", Toast.LENGTH_SHORT).show();
-                        }
                     }
 
                     @Override
@@ -145,7 +139,7 @@ public class DonateHistoryActivity extends AppCompatActivity {
             }
         };
 
-
+        donate_progress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.example.dsc.Adapters.MessageAdapter;
 import com.example.dsc.Model.Chat;
@@ -155,16 +154,13 @@ public class ChatActivity extends AppCompatActivity {
                     Chat chat=snap.getValue(Chat.class);
                     if((Objects.requireNonNull(chat).getReceiver().equals(myid) && chat.getSender().equals(userid) )|| (chat.getReceiver().equals(userid)&& chat.getSender().equals(myid))){
                         mChat.add(chat);
-                    }
-                    else
-                    {
-                        Toast.makeText(ChatActivity.this, "You have not asked any questions/doubts till now", Toast.LENGTH_SHORT).show();
+                        chatProgress.setVisibility(View.INVISIBLE);
+
                     }
 
                 }
                 messageAdapter= new MessageAdapter(ChatActivity.this,mChat,imageUrl);
                 msg.setAdapter(messageAdapter);
-                chatProgress.setVisibility(View.INVISIBLE);
 
 
             }

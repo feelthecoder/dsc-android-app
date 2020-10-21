@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dsc.ActivityWeb;
 import com.example.dsc.Model.ResultGet;
@@ -111,11 +110,7 @@ public class ResourceDSCActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                        else
-                        {
-                            progressBar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(ResourceDSCActivity.this, "There are no resources available", Toast.LENGTH_SHORT).show();
-                        }
+
                     }
 
                     @Override
@@ -135,7 +130,7 @@ public class ResourceDSCActivity extends AppCompatActivity {
             }
         };
 
-
+        progressBar.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

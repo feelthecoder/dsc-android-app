@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dsc.Model.ProjectUpload;
 import com.example.dsc.ViewHolder.ViewSpace;
@@ -172,10 +171,6 @@ public class MyProjects extends AppCompatActivity {
                                 projectViewHolder.mStatus.setText("Completed");
                                 projectViewHolder.mStatus.setTextColor(Color.GREEN);
                             }
-                        }else
-                        {
-                            project_progress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(MyProjects.this, "You have not submitted any project", Toast.LENGTH_SHORT).show();
                         }
 
                         setGuide("Projects","Swipe down to see your submitted projects & Click to view your project.",projectViewHolder.itemView,"projM");
@@ -199,7 +194,7 @@ public class MyProjects extends AppCompatActivity {
             }
         };
 
-
+        project_progress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

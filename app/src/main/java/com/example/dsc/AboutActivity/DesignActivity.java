@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.dsc.Model.MembersInfo;
@@ -151,10 +150,6 @@ des_progress=findViewById(R.id.des_progress);
 
 
                             setGuide("Designer Team","You can visit profile, Click to see.",designViewHolder.itemView,"DESC");
-                        }else
-                        {
-                            des_progress.setVisibility(View.INVISIBLE);
-                            Toast.makeText(DesignActivity.this, "There are no members in Design Team", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -175,7 +170,7 @@ des_progress=findViewById(R.id.des_progress);
             }
         };
 
-
+        des_progress.setVisibility(View.INVISIBLE);
         recyclerView.setAdapter(adapter);
         ViewSpace itemDecoration = new ViewSpace(getApplicationContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

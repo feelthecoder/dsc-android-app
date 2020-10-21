@@ -154,12 +154,12 @@ public class Main1Activity extends AppCompatActivity implements NavigationView.O
             manager.createNotificationChannel(channel);
         }
 
-DatabaseReference db=FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().toString());
+DatabaseReference db=FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    if(dataSnapshot.child("user").toString().equals("userdsc") && dataSnapshot.child("dob").toString().equals("08/06/2019")) {
+                if (dataSnapshot.child("user").exists()){
+                    if(Objects.requireNonNull(dataSnapshot.child("user").getValue()).toString().equals("userdsc") && Objects.requireNonNull(dataSnapshot.child("dob").getValue()).toString().equals("08/06/2019")) {
                         AlertDialog.Builder alertDialog = new AlertDialog.Builder(Main1Activity.this);
                         alertDialog.setTitle("Complete Profile");
                         alertDialog.setMessage("Please complete your profile to continue using this app otherwise app will exit. It will take one minutes to complete profile.");

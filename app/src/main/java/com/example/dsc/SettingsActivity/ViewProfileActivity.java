@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -28,7 +29,7 @@ public class ViewProfileActivity extends AppCompatActivity {
     CircularImageView pImage;
     DatabaseReference dRef,aRef;
     TextView edit;
-
+ProgressBar viewProgress;
     String name,mail,username,skills,dob,mobile,gender,DP,link;
 
     @Override
@@ -51,6 +52,7 @@ public class ViewProfileActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         tname=findViewById(R.id.profile_name_view);
+        viewProgress=findViewById(R.id.progress_view_profile);
         tmail=findViewById(R.id.profile_email_view);
         tusername=findViewById(R.id.profile_username_view_a);
         tskills=findViewById(R.id.profile_skills_view_a);
@@ -70,6 +72,7 @@ public class ViewProfileActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        viewProgress.setVisibility(View.VISIBLE);
         loadProfile();
     }
 
@@ -94,6 +97,7 @@ public class ViewProfileActivity extends AppCompatActivity {
                     tgender.setText(gender);
                     tmobile.setText(mobile);
                     Glide.with(ViewProfileActivity.this).load(link).into(pImage);
+                    viewProgress.setVisibility(View.INVISIBLE);
 
                 }
             }

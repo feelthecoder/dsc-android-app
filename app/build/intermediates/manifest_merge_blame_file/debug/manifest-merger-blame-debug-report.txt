@@ -1,0 +1,566 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:dist="http://schemas.android.com/apk/distribution"
+4    package="com.example.dsc"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="23"
+9-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="28" />
+10-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml
+11
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:6:5-67
+12-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:8:5-80
+14-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:8:22-77
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:9:5-81
+15-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:9:22-78
+16    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+16-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:10:5-75
+16-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:10:22-72
+17    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+17-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\5a2bed3408b054a386c2d5e4c15a09e3\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:24:5-68
+17-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\5a2bed3408b054a386c2d5e4c15a09e3\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:24:22-65
+18    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+18-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:26:5-82
+18-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:26:22-79
+19    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+19-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:26:5-110
+19-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:26:22-107
+20
+21    <application
+21-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:12:5-119:19
+22        android:allowBackup="true"
+22-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:13:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.1.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\991960bc6d3053c14f1d3c682a2b809b\core-1.1.0\AndroidManifest.xml:24:18-86
+24        android:debuggable="true"
+25        android:extractNativeLibs="false"
+26        android:icon="@drawable/dsclogo"
+26-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:14:9-41
+27        android:label="@string/app_name"
+27-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:15:9-41
+28        android:roundIcon="@drawable/dsclogo"
+28-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:16:9-46
+29        android:supportsRtl="true"
+29-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:17:9-35
+30        android:theme="@style/AppTheme"
+30-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:19:9-40
+31        android:windowFullscreen="true" >
+31-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:18:9-40
+32        <activity android:name="com.example.dsc.ShowDonation" />
+32-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:20:9-59
+32-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:20:19-47
+33        <activity android:name="com.example.dsc.ActivityResources" />
+33-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:21:9-55
+33-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:21:19-52
+34        <activity android:name="com.example.dsc.ResultQuizActivity" />
+34-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:22:9-56
+34-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:22:19-53
+35        <activity android:name="com.example.dsc.QuizResultActivity" />
+35-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:23:9-56
+35-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:23:19-53
+36        <activity android:name="com.example.dsc.QuizMainActivity" />
+36-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:24:9-54
+36-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:24:19-51
+37        <activity android:name="com.example.dsc.MyQuiz" />
+37-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:25:9-44
+37-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:25:19-41
+38        <activity android:name="com.example.dsc.StartQuizActivity" />
+38-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:26:9-55
+38-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:26:19-52
+39        <activity android:name="com.example.dsc.CategoryActivity" />
+39-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:27:9-54
+39-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:27:19-51
+40        <activity android:name="com.example.dsc.NotificationActivity" />
+40-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:28:9-58
+40-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:28:19-55
+41        <activity android:name="com.example.dsc.ChatActivity" />
+41-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:29:9-50
+41-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:29:19-47
+42        <activity android:name="com.example.dsc.ClaimActivity" />
+42-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:30:9-51
+42-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:30:19-48
+43        <activity android:name="com.example.dsc.AboutActivity.ProfileActivity" />
+43-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:31:9-67
+43-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:31:19-64
+44        <activity android:name="com.example.dsc.AboutActivity.DesignActivity" />
+44-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:32:9-66
+44-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:32:19-63
+45        <activity android:name="com.example.dsc.AboutActivity.TechnicalActivity" />
+45-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:33:9-69
+45-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:33:19-66
+46        <activity android:name="com.example.dsc.AboutActivity.BoardActivity" />
+46-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:34:9-65
+46-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:34:19-62
+47        <activity android:name="com.example.dsc.AboutActivity.ManagementActivity" />
+47-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:35:9-70
+47-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:35:19-67
+48        <activity android:name="com.example.dsc.AboutActivity.MembersActivity" />
+48-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:36:9-67
+48-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:36:19-64
+49        <activity android:name="com.example.dsc.ActivityWeb" />
+49-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:37:9-49
+49-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:37:19-46
+50        <activity android:name="com.example.dsc.VersionActivity" />
+50-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:38:9-53
+50-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:38:19-50
+51        <activity android:name="com.example.dsc.DonateHistoryActivity" />
+51-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:39:9-59
+51-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:39:19-56
+52        <activity android:name="com.example.dsc.SettingsActivity.EditProfileActivity" />
+52-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:40:9-74
+52-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:40:19-71
+53        <activity android:name="com.example.dsc.SettingsActivity.ViewProfileActivity" />
+53-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:41:9-74
+53-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:41:19-71
+54        <activity android:name="com.example.dsc.ResourceActivity.ResourceBlogActivity" />
+54-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:42:9-75
+54-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:42:19-72
+55        <activity android:name="com.example.dsc.ResourceActivity.ResourceStandardBookActivity" />
+55-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:43:9-83
+55-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:43:19-80
+56        <activity android:name="com.example.dsc.ResourceActivity.ResourceDSCActivity" />
+56-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:44:9-74
+56-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:44:19-71
+57        <activity android:name="com.example.dsc.ResourceActivity.ResourceNPTELActivity" />
+57-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:45:9-76
+57-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:45:19-73
+58        <activity android:name="com.example.dsc.ResourceActivity.ResourceUdemyActivity" />
+58-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:46:9-76
+58-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:46:19-73
+59        <activity android:name="com.example.dsc.ResourceActivity.ResourceYoutubeActivity" />
+59-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:47:9-78
+59-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:47:19-75
+60        <activity android:name="com.example.dsc.ResourceActivity.ResourcePDFActivity" />
+60-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:48:9-74
+60-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:48:19-71
+61        <activity android:name="com.example.dsc.ResourceActivity.eResourceActivity" />
+61-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:49:9-72
+61-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:49:19-69
+62        <activity android:name="com.example.dsc.ViewImageActivity" />
+62-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:50:9-55
+62-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:50:19-52
+63        <activity android:name="com.example.dsc.SpandanRegistrationActivity" />
+63-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:51:9-65
+63-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:51:19-62
+64        <activity android:name="com.example.dsc.SpandanEventActivity" />
+64-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:52:9-58
+64-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:52:19-55
+65        <activity android:name="com.example.dsc.ViewSpandanActivity" />
+65-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:53:9-57
+65-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:53:19-54
+66        <activity
+66-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:54:9-56:44
+67            android:name="com.example.dsc.ShowFormActivity"
+67-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:55:13-45
+68            android:label="Form Details" />
+68-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:56:13-41
+69        <activity
+69-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:57:9-59:48
+70            android:name="com.example.dsc.WorkshopDetailActivity"
+70-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:58:13-51
+71            android:label="Workshop Details" />
+71-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:59:13-45
+72        <activity android:name="com.example.dsc.ActivityPDF" />
+72-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:60:9-49
+72-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:60:19-46
+73        <activity
+73-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:61:9-63:48
+74            android:name="com.example.dsc.TrainDetailActivity"
+74-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:62:13-48
+75            android:label="Training Details" />
+75-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:63:13-45
+76        <activity
+76-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:64:9-66:51
+77            android:name="com.example.dsc.CompeteDetailActivity"
+77-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:65:13-50
+78            android:label="Competition Details" />
+78-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:66:13-48
+79        <activity
+79-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:67:9-69:44
+80            android:name="com.example.dsc.RegistrationActivity"
+80-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:68:13-49
+81            android:label="Registration" />
+81-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:69:13-41
+82        <activity
+82-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:70:9-72:44
+83            android:name="com.example.dsc.CRegistrationActivity"
+83-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:71:13-50
+84            android:label="Registration" />
+84-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:72:13-41
+85        <activity
+85-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:73:9-75:45
+86            android:name="com.example.dsc.EventDetailActivity"
+86-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:74:13-48
+87            android:label="Event Details" />
+87-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:75:13-42
+88        <activity
+88-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:76:9-78:48
+89            android:name="com.example.dsc.PeopleLikedActivity"
+89-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:77:13-48
+90            android:label="People Who Liked" />
+90-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:78:13-45
+91        <activity
+91-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:79:9-81:47
+92            android:name="com.example.dsc.FormsActivity"
+92-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:80:13-42
+93            android:label="Submitted Forms" />
+93-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:81:13-44
+94        <activity
+94-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:82:9-84:42
+95            android:name="com.example.dsc.ResultActivity"
+95-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:83:13-43
+96            android:label="My Results" />
+96-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:84:13-39
+97        <activity
+97-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:85:9-87:43
+98            android:name="com.example.dsc.MyProjects"
+98-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:86:13-39
+99            android:label="My Projects" />
+99-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:87:13-40
+100        <activity
+100-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:88:9-90:44
+101            android:name="com.example.dsc.TRegistrationActivity"
+101-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:89:13-50
+102            android:label="Registration" />
+102-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:90:13-41
+103        <activity
+103-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:91:9-93:44
+104            android:name="com.example.dsc.WRegistrationActivity"
+104-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:92:13-50
+105            android:label="Registration" />
+105-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:93:13-41
+106        <activity android:name="com.example.dsc.dsc_splash" >
+106-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:94:9-100:20
+106-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:94:19-45
+107            <intent-filter>
+107-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:95:13-99:29
+108                <action android:name="android.intent.action.MAIN" />
+108-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:96:17-69
+108-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:96:25-66
+109
+110                <category android:name="android.intent.category.LAUNCHER" />
+110-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:98:17-77
+110-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:98:27-74
+111            </intent-filter>
+112        </activity>
+113        <activity android:name="com.example.dsc.welcome_main" />
+113-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:101:9-50
+113-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:101:19-47
+114        <activity android:name="com.example.dsc.slide_layout_4" />
+114-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:102:9-52
+114-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:102:19-49
+115        <activity android:name="com.example.dsc.Phone_Verification_Activity" />
+115-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:103:9-65
+115-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:103:19-62
+116        <activity android:name="com.example.dsc.login" />
+116-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:104:9-43
+116-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:104:19-40
+117        <activity android:name="com.example.dsc.Register_User" />
+117-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:105:9-51
+117-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:105:19-48
+118        <activity android:name="com.example.dsc.Login_Email" />
+118-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:106:9-49
+118-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:106:19-46
+119        <activity android:name="com.example.dsc.Main1Activity" />
+119-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:107:9-51
+119-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:107:19-48
+120        <activity android:name="com.example.dsc.Phone_Login_Main" />
+120-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:108:9-54
+120-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:108:19-51
+121        <activity android:name="com.example.dsc.Google_Login_Activity" />
+121-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:109:9-59
+121-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:109:19-56
+122        <activity
+122-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:110:9-112:44
+123            android:name="com.example.dsc.PostTechActivity"
+123-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:111:13-45
+124            android:label="Add Comments" />
+124-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:112:13-41
+125
+126        <service android:name="com.example.dsc.Services.FCMService" >
+126-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:114:9-118:19
+126-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:114:18-53
+127            <intent-filter>
+127-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:115:13-117:29
+128                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+128-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:116:17-78
+128-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:116:25-75
+129            </intent-filter>
+130        </service>
+131
+132        <activity
+132-->[com.shreyaspatil:EasyUpiPayment:2.2] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\84a8820916af88757e75dfb19d50a53c\jetified-EasyUpiPayment-2.2\AndroidManifest.xml:12:9-14:75
+133            android:name="com.shreyaspatil.EasyUpiPayment.ui.PaymentUiActivity"
+133-->[com.shreyaspatil:EasyUpiPayment:2.2] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\84a8820916af88757e75dfb19d50a53c\jetified-EasyUpiPayment-2.2\AndroidManifest.xml:13:13-80
+134            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+134-->[com.shreyaspatil:EasyUpiPayment:2.2] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\84a8820916af88757e75dfb19d50a53c\jetified-EasyUpiPayment-2.2\AndroidManifest.xml:14:13-72
+135        <!--
+136             FirebaseMessagingService performs security checks at runtime,
+137             but set to not exported to explicitly avoid allowing another app to call it.
+138        -->
+139        <service
+139-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:28:9-34:19
+140            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+140-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:29:13-82
+141            android:exported="false" >
+141-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:30:13-37
+142            <intent-filter android:priority="-500" >
+142-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:115:13-117:29
+143                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+143-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:116:17-78
+143-->C:\Users\Acer\AndroidStudioProjects\DSC\app\src\main\AndroidManifest.xml:116:25-75
+144            </intent-filter>
+145        </service>
+146        <service
+146-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:35:9-41:19
+147            android:name="com.google.firebase.components.ComponentDiscoveryService"
+147-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:36:13-84
+148            android:directBootAware="true"
+148-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\da83aa4151f1339f273a4e00a2a10283\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+149            android:exported="false" >
+149-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:37:13-37
+150            <meta-data
+150-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:38:13-40:85
+151                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+151-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:39:17-119
+152                android:value="com.google.firebase.components.ComponentRegistrar" />
+152-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\80a968a688a877c720066c8241cb55f8\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:40:17-82
+153            <meta-data
+153-->[com.google.firebase:firebase-crashlytics:17.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\00157861ad0944d80a1c789d94c2c327\jetified-firebase-crashlytics-17.0.0\AndroidManifest.xml:16:13-18:85
+154                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+154-->[com.google.firebase:firebase-crashlytics:17.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\00157861ad0944d80a1c789d94c2c327\jetified-firebase-crashlytics-17.0.0\AndroidManifest.xml:17:17-115
+155                android:value="com.google.firebase.components.ComponentRegistrar" />
+155-->[com.google.firebase:firebase-crashlytics:17.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\00157861ad0944d80a1c789d94c2c327\jetified-firebase-crashlytics-17.0.0\AndroidManifest.xml:18:17-82
+156            <meta-data
+156-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\5a2bed3408b054a386c2d5e4c15a09e3\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:30:13-32:85
+157                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+157-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\5a2bed3408b054a386c2d5e4c15a09e3\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:31:17-139
+158                android:value="com.google.firebase.components.ComponentRegistrar" />
+158-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\5a2bed3408b054a386c2d5e4c15a09e3\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:32:17-82
+159            <meta-data
+159-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:32:13-34:85
+160                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+160-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:33:17-96
+161                android:value="com.google.firebase.components.ComponentRegistrar" />
+161-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:34:17-82
+162            <meta-data
+162-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
+163                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+163-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
+164                android:value="com.google.firebase.components.ComponentRegistrar" />
+164-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
+165            <meta-data
+165-->[com.google.firebase:firebase-database:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\e15cee1e0bd3255d7577e63d4480ee0e\jetified-firebase-database-19.3.0\AndroidManifest.xml:32:13-34:85
+166                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+166-->[com.google.firebase:firebase-database:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\e15cee1e0bd3255d7577e63d4480ee0e\jetified-firebase-database-19.3.0\AndroidManifest.xml:33:17-109
+167                android:value="com.google.firebase.components.ComponentRegistrar" />
+167-->[com.google.firebase:firebase-database:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\e15cee1e0bd3255d7577e63d4480ee0e\jetified-firebase-database-19.3.0\AndroidManifest.xml:34:17-82
+168            <meta-data
+168-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\1e43aa534327e9f563b8b7f882ccb82a\jetified-firebase-storage-19.1.1\AndroidManifest.xml:33:13-35:85
+169                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+169-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\1e43aa534327e9f563b8b7f882ccb82a\jetified-firebase-storage-19.1.1\AndroidManifest.xml:34:17-107
+170                android:value="com.google.firebase.components.ComponentRegistrar" />
+170-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\1e43aa534327e9f563b8b7f882ccb82a\jetified-firebase-storage-19.1.1\AndroidManifest.xml:35:17-82
+171            <meta-data
+171-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1cf8196b7033c1c6b1b0ec18c526132\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
+172                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+172-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1cf8196b7033c1c6b1b0ec18c526132\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
+173                android:value="com.google.firebase.components.ComponentRegistrar" />
+173-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1cf8196b7033c1c6b1b0ec18c526132\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
+174            <meta-data
+174-->[com.google.firebase:firebase-installations:16.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\ab26478ed15e41803f63471e48f22fd1\jetified-firebase-installations-16.3.0\AndroidManifest.xml:17:13-19:85
+175                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+175-->[com.google.firebase:firebase-installations:16.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\ab26478ed15e41803f63471e48f22fd1\jetified-firebase-installations-16.3.0\AndroidManifest.xml:18:17-127
+176                android:value="com.google.firebase.components.ComponentRegistrar" />
+176-->[com.google.firebase:firebase-installations:16.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\ab26478ed15e41803f63471e48f22fd1\jetified-firebase-installations-16.3.0\AndroidManifest.xml:19:17-82
+177        </service>
+178
+179        <receiver
+179-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:37:9-44:20
+180            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+180-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:38:13-78
+181            android:exported="true"
+181-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:39:13-36
+182            android:permission="com.google.android.c2dm.permission.SEND" >
+182-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:40:13-73
+183            <intent-filter>
+183-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:41:13-43:29
+184                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+184-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:42:17-81
+184-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\42c3e45e9be9a23c0cb4220f01a66f11\jetified-firebase-iid-20.1.7\AndroidManifest.xml:42:25-78
+185            </intent-filter>
+186        </receiver>
+187        <receiver
+187-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:29:9-33:20
+188            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+188-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:30:13-85
+189            android:enabled="true"
+189-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:31:13-35
+190            android:exported="false" >
+190-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:32:13-37
+191        </receiver>
+192
+193        <service
+193-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:35:9-38:40
+194            android:name="com.google.android.gms.measurement.AppMeasurementService"
+194-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:36:13-84
+195            android:enabled="true"
+195-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:37:13-35
+196            android:exported="false" />
+196-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:38:13-37
+197        <service
+197-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:39:9-43:72
+198            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+198-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:40:13-87
+199            android:enabled="true"
+199-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:41:13-35
+200            android:exported="false"
+200-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:42:13-37
+201            android:permission="android.permission.BIND_JOB_SERVICE" />
+201-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\058d831dbaaff92f0cde117a2d2e3ad1\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:43:13-69
+202
+203        <activity
+203-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
+204            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+204-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
+205            android:excludeFromRecents="true"
+205-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
+206            android:exported="true"
+206-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
+207            android:launchMode="singleTask"
+207-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
+208            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+208-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
+209            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+209-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\2810586f6abb416b770993249fe79f8e\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
+210        <activity
+210-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:23:9-27:75
+211            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+211-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:24:13-93
+212            android:excludeFromRecents="true"
+212-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:25:13-46
+213            android:exported="false"
+213-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:26:13-37
+214            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+214-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:27:13-72
+215        <!--
+216            Service handling Google Sign-In user revocation. For apps that do not integrate with
+217            Google Sign-In, this service will never be started.
+218        -->
+219        <service
+219-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:33:9-36:110
+220            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+220-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:34:13-89
+221            android:exported="true"
+221-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:35:13-36
+222            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+222-->[com.google.android.gms:play-services-auth:18.0.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\a1e9bb4e329e8c38021fa440c4d1f7ac\jetified-play-services-auth-18.0.0\AndroidManifest.xml:36:13-107
+223
+224        <activity
+224-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\617b931a2ac6b14b54c6fa0ec4835313\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+225            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+225-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\617b931a2ac6b14b54c6fa0ec4835313\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+226            android:exported="false"
+226-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\617b931a2ac6b14b54c6fa0ec4835313\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+227            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+227-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\617b931a2ac6b14b54c6fa0ec4835313\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+228
+229        <provider
+229-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\da83aa4151f1339f273a4e00a2a10283\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+230            android:name="com.google.firebase.provider.FirebaseInitProvider"
+230-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\da83aa4151f1339f273a4e00a2a10283\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+231            android:authorities="com.example.dsc.firebaseinitprovider"
+231-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\da83aa4151f1339f273a4e00a2a10283\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+232            android:exported="false"
+232-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\da83aa4151f1339f273a4e00a2a10283\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+233            android:initOrder="100" />
+233-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\da83aa4151f1339f273a4e00a2a10283\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+234
+235        <meta-data
+235-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\e5da776b499c0d74a66194675b26f730\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+236            android:name="com.google.android.gms.version"
+236-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\e5da776b499c0d74a66194675b26f730\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+237            android:value="@integer/google_play_services_version" /> <!-- The activity will be merged into the manifest of the hosting app. -->
+237-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\e5da776b499c0d74a66194675b26f730\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+238        <activity
+238-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:8:5-271
+239            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+239-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:8:15-102
+240            android:enabled="false"
+240-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:8:103-126
+241            android:exported="false"
+241-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:8:127-151
+242            android:launchMode="singleInstance"
+242-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:8:204-239
+243            android:process=":playcore_missing_splits_activity"
+243-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:8:152-203
+244            android:stateNotNeeded="true" />
+244-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:8:240-269
+245        <activity
+245-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:9:5-278
+246            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+246-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:9:15-95
+247            android:enabled="false"
+247-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:9:96-119
+248            android:exported="false"
+248-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:9:120-144
+249            android:process=":playcore_dialog_wrapper_activity"
+249-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:9:175-226
+250            android:stateNotNeeded="true"
+250-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:9:145-174
+251            android:theme="@style/Theme.PlayCore.Transparent" />
+251-->[com.google.android.play:core:1.6.3] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\994aec993ea76a98aaf8a95aa5db4d69\jetified-core-1.6.3\AndroidManifest.xml:9:227-276
+252
+253        <service
+253-->[com.google.android.datatransport:transport-backend-cct:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\82406d1d3dea8a448f5ae74cb86c4065\jetified-transport-backend-cct-2.2.1\AndroidManifest.xml:29:9-35:19
+254            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+254-->[com.google.android.datatransport:transport-backend-cct:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\82406d1d3dea8a448f5ae74cb86c4065\jetified-transport-backend-cct-2.2.1\AndroidManifest.xml:30:13-103
+255            android:exported="false" >
+255-->[com.google.android.datatransport:transport-backend-cct:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\82406d1d3dea8a448f5ae74cb86c4065\jetified-transport-backend-cct-2.2.1\AndroidManifest.xml:31:13-37
+256            <meta-data
+256-->[com.google.android.datatransport:transport-backend-cct:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\82406d1d3dea8a448f5ae74cb86c4065\jetified-transport-backend-cct-2.2.1\AndroidManifest.xml:32:13-34:39
+257                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+257-->[com.google.android.datatransport:transport-backend-cct:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\82406d1d3dea8a448f5ae74cb86c4065\jetified-transport-backend-cct-2.2.1\AndroidManifest.xml:33:17-94
+258                android:value="cct" />
+258-->[com.google.android.datatransport:transport-backend-cct:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\82406d1d3dea8a448f5ae74cb86c4065\jetified-transport-backend-cct-2.2.1\AndroidManifest.xml:34:17-36
+259        </service>
+260        <service
+260-->[com.google.android.datatransport:transport-runtime:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\24e9f71321faaa1a40d5168b6399932d\jetified-transport-runtime-2.2.1\AndroidManifest.xml:26:9-30:19
+261            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+261-->[com.google.android.datatransport:transport-runtime:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\24e9f71321faaa1a40d5168b6399932d\jetified-transport-runtime-2.2.1\AndroidManifest.xml:27:13-117
+262            android:exported="false"
+262-->[com.google.android.datatransport:transport-runtime:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\24e9f71321faaa1a40d5168b6399932d\jetified-transport-runtime-2.2.1\AndroidManifest.xml:28:13-37
+263            android:permission="android.permission.BIND_JOB_SERVICE" >
+263-->[com.google.android.datatransport:transport-runtime:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\24e9f71321faaa1a40d5168b6399932d\jetified-transport-runtime-2.2.1\AndroidManifest.xml:29:13-69
+264        </service>
+265
+266        <receiver
+266-->[com.google.android.datatransport:transport-runtime:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\24e9f71321faaa1a40d5168b6399932d\jetified-transport-runtime-2.2.1\AndroidManifest.xml:32:9-34:40
+267            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+267-->[com.google.android.datatransport:transport-runtime:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\24e9f71321faaa1a40d5168b6399932d\jetified-transport-runtime-2.2.1\AndroidManifest.xml:33:13-132
+268            android:exported="false" />
+268-->[com.google.android.datatransport:transport-runtime:2.2.1] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\24e9f71321faaa1a40d5168b6399932d\jetified-transport-runtime-2.2.1\AndroidManifest.xml:34:13-37
+269
+270        <provider
+270-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\912d8e4092ee7febc01471c4660b4322\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+271            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+271-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\912d8e4092ee7febc01471c4660b4322\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+272            android:authorities="com.example.dsc.lifecycle-process"
+272-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\912d8e4092ee7febc01471c4660b4322\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+273            android:exported="false"
+273-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\912d8e4092ee7febc01471c4660b4322\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+274            android:multiprocess="true" />
+274-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Acer\.gradle\caches\transforms-2\files-2.1\912d8e4092ee7febc01471c4660b4322\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+275    </application>
+276
+277</manifest>
