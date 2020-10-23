@@ -7,76 +7,76 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.dsc.ui.HomeFragment"
+        android:name="com.feelthecoder.dsc.ui.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_edu"
-        android:name="com.example.dsc.ui.EducationFragment"
+        android:name="com.feelthecoder.dsc.ui.EducationFragment"
         android:label="@string/menu_edu"
         tools:layout="@layout/fragment_education" />
 
     <fragment
         android:id="@+id/nav_train"
-        android:name="com.example.dsc.ui.TrainingFragment"
+        android:name="com.feelthecoder.dsc.ui.TrainingFragment"
         android:label="@string/menu_training"
         tools:layout="@layout/fragment_training" />
 
     <fragment
         android:id="@+id/nav_workshop"
-        android:name="com.example.dsc.ui.WorkshopFragment"
+        android:name="com.feelthecoder.dsc.ui.WorkshopFragment"
         android:label="@string/menu_workshops"
         tools:layout="@layout/fragment_workshps" />
 
     <fragment
         android:id="@+id/nav_events"
-        android:name="com.example.dsc.ui.EventsFragment"
+        android:name="com.feelthecoder.dsc.ui.EventsFragment"
         android:label="@string/menu_Events"
         tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/nav_tech"
-        android:name="com.example.dsc.ui.SpandanFragment"
+        android:name="com.feelthecoder.dsc.ui.SpandanFragment"
         android:label="@string/menu_spandan"
         tools:layout="@layout/fragment_spandan" />
     <fragment
         android:id="@+id/nav_quiz"
-        android:name="com.example.dsc.ui.QuizFragment"
+        android:name="com.feelthecoder.dsc.ui.QuizFragment"
         android:label="@string/menu_quiz"
         tools:layout="@layout/fragment_quiz" />
 
     <fragment
         android:id="@+id/nav_compete"
-        android:name="com.example.dsc.ui.CompeteFragment"
+        android:name="com.feelthecoder.dsc.ui.CompeteFragment"
         android:label="@string/menu_compete"
         tools:layout="@layout/fragment_compete" />
     <fragment
         android:id="@+id/nav_leader"
-        android:name="com.example.dsc.ui.LeaderboardFragment"
+        android:name="com.feelthecoder.dsc.ui.LeaderboardFragment"
         android:label="@string/menu_leader"
         tools:layout="@layout/fragment_leaderboard" />
     <fragment
         android:id="@+id/nav_project"
-        android:name="com.example.dsc.ui.ProjectFragment"
+        android:name="com.feelthecoder.dsc.ui.ProjectFragment"
         android:label="@string/menu_project"
         tools:layout="@layout/fragment_project" />
 
     <fragment
         android:id="@+id/nav_donate"
-        android:name="com.example.dsc.ui.DonateFragment"
+        android:name="com.feelthecoder.dsc.ui.DonateFragment"
         android:label="@string/menu_donate"
         tools:layout="@layout/fragment_donate" />
 
     <fragment
         android:id="@+id/nav_about"
-        android:name="com.example.dsc.ui.AboutFragment"
+        android:name="com.feelthecoder.dsc.ui.AboutFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
 
     <fragment
         android:id="@+id/nav_sett"
-        android:name="com.example.dsc.ui.SettingsFragment"
+        android:name="com.feelthecoder.dsc.ui.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 
