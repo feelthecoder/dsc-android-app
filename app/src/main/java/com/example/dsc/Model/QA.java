@@ -2,6 +2,10 @@ package com.example.dsc.Model;
 
 import java.io.Serializable;
 
+import androidx.annotation.Keep;
+
+@Keep
+
 public class QA implements Serializable {
     String question,option1,option2,option3,option4,correct_answer;
 

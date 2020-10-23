@@ -8,6 +8,7 @@
     android:background="?attr/backgroundcolor"
     app:titleTextColor="?attr/titleColor"
     tools:openDrawer="start"
+    android:scrollbars="none"
     >
 
     <include
@@ -22,6 +23,7 @@
         android:background="?attr/backgroundcolor"
         app:titleTextColor="?attr/titleColor"
         android:layout_height="match_parent"
+        android:scrollbars="none"
         android:layout_gravity="start"
         app:itemIconTint="?attr/textcolor"
         app:itemTextColor="?attr/textcolor"

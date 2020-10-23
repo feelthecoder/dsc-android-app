@@ -199,8 +199,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         aRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.hasChild("DP")){
-                    String dp= Objects.requireNonNull(dataSnapshot.child("DP").getValue()).toString();
+                if(dataSnapshot.hasChild("dp")){
+                    String dp= Objects.requireNonNull(dataSnapshot.child("dp").getValue()).toString();
                     dp_won_user.setText("DP : "+dp);
                     String quizwon= Objects.requireNonNull(dataSnapshot.child("quizwon").getValue()).toString();
                     quiz_won.setText("You won "+quizwon+" quiz challenges.");
@@ -248,7 +248,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 final String postID=getRef(i).getKey();
                 assert postID != null;
                 final DatabaseReference likeRef=FirebaseDatabase.getInstance().getReference("MainData").child("TechPosts").child(postID).child("LIKES");
-               final DatabaseReference userRef=FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                final DatabaseReference userRef=FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 dRef.child(postID).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -369,11 +369,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                                         strAppLink="https://play.google.com/store/apps/details?id=" +appPackageName;
                                     }
                                     a.setType("text/link");
-                                    String shareBody=desc+". Download our app to view this post."+strAppLink;
+                                    String shareBody=desc+". Download this app to view this post."+strAppLink;
                                     String shareSub=caption;
                                     a.putExtra(Intent.EXTRA_SUBJECT,shareSub);
                                     a.putExtra(Intent.EXTRA_TEXT,shareBody);
-                                    dRef.child(postID).child("tShare").setValue(shareall+1);
+                                    dRef.child(postID).child("tShare").setValue(""+(shareall+1));
                                     startActivity(Intent.createChooser(a,"Share Using"));
 
                                 }

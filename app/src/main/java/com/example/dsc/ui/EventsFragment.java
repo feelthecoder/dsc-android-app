@@ -16,10 +16,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dsc.EventDetailActivity;
+import com.example.dsc.EventActivity.EventDetailActivity;
 import com.example.dsc.Model.EventGet;
 import com.example.dsc.R;
-import com.example.dsc.RegistrationActivity;
+import com.example.dsc.EventActivity.RegistrationActivity;
 import com.example.dsc.ViewHolder.ViewSpace;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

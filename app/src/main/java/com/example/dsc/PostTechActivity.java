@@ -80,6 +80,7 @@ public class PostTechActivity extends AppCompatActivity {
         comment_i=findViewById(R.id.txt_comment_tech);
         desc=findViewById(R.id.tech_desc_tech);
         editText=findViewById(R.id.tech_comment);
+        editText.requestFocus();
         img=findViewById(R.id.tech_send_comment);
         pic=findViewById(R.id.tech_img_tech);
         recyclerView=findViewById(R.id.comment_recycler);
@@ -185,7 +186,7 @@ public class PostTechActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            commentT.child("tComment").setValue((come + 1));
+                            commentT.child("tComment").setValue(""+(come + 1));
                             comment_i.setText(come+1+" Comments");
                             Snackbar snackbar = Snackbar
                                     .make(findViewById(R.id.rel_post), "Comment Posted : " + comm, Snackbar.LENGTH_LONG);
@@ -254,7 +255,7 @@ public class PostTechActivity extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
-                                                                    commentT.child("tComment").setValue((come - 1));
+                                                                    commentT.child("tComment").setValue(""+(come - 1));
                                                                     comment_i.setText(come-1+" Comments");
                                                                     Snackbar snackbar = Snackbar
                                                                             .make(findViewById(R.id.rel_post), "Comment Deleted!", Snackbar.LENGTH_LONG);

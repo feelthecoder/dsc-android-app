@@ -1,5 +1,8 @@
 package com.example.dsc.Model;
 
+import androidx.annotation.Keep;
+
+@Keep
 public class RegistrationForm {
     String name_,email_,mobile_,course_,year_,branch_,college_,date_,category,tName,code_;
 

@@ -40,6 +40,15 @@
         android:visibility="invisible"
         android:layout_centerInParent="true"
         android:id="@+id/spandan_progress"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/textcolor"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:text="There are no events currently"
+        android:layout_centerInParent="true"
+        android:id="@+id/not_spa_here"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/txt_avail"
         android:id="@+id/spandan_recycler"

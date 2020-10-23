@@ -20,8 +20,8 @@ import com.example.dsc.ActivityPDF;
 import com.example.dsc.Model.TechSpandan;
 import com.example.dsc.R;
 import com.example.dsc.ResultActivity;
-import com.example.dsc.SpandanEventActivity;
-import com.example.dsc.TRegistrationActivity;
+import com.example.dsc.EventActivity.SpandanEventActivity;
+import com.example.dsc.EventActivity.TRegistrationActivity;
 import com.example.dsc.ViewHolder.ViewSpace;
 import com.example.dsc.ViewSpandanActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -56,6 +56,7 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager HorizontalLayout;
     ProgressBar spaProgress;
+    TextView not;
 
 
 
@@ -103,6 +104,8 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
         lRef= FirebaseDatabase.getInstance().getReference("About");
         RecyclerViewLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+        not=view.findViewById(R.id.not_spa_here);
+        not.setVisibility(View.VISIBLE);
         spaProgress=view.findViewById(R.id.spandan_progress);
         spaProgress.setVisibility(View.VISIBLE);
         HorizontalLayout = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -141,6 +144,7 @@ public class SpandanFragment extends Fragment implements View.OnClickListener {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("pic")){
                             spaProgress.setVisibility(View.INVISIBLE);
+                            not.setVisibility(View.INVISIBLE);
                             final String caption= Objects.requireNonNull(dataSnapshot.child("title").getValue()).toString();
                             final String desc= Objects.requireNonNull(dataSnapshot.child("description").getValue()).toString();
                             final String sDes= Objects.requireNonNull(dataSnapshot.child("shortdes").getValue()).toString();

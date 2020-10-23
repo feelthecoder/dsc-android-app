@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.dsc.CategoryActivity;
-import com.example.dsc.MyQuiz;
+import com.example.dsc.QuizActivity.CategoryActivity;
+import com.example.dsc.QuizActivity.MyQuiz;
 import com.example.dsc.R;
 
 import androidx.annotation.NonNull;

@@ -19,6 +19,16 @@
             android:layout_height="?attr/actionBarSize">
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/chat_no"
+        android:textSize="20sp"
+        android:textColor="?attr/textcolor"
+        android:visibility="invisible"
+        android:text="You have not asked any question till now."/>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,5 +76,7 @@
             android:background="@drawable/round"
             android:id="@+id/msg_btn_send"/>
 
+
     </RelativeLayout>
+
 </RelativeLayout>

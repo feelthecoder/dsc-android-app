@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.dsc.Adapters.MessageAdapter;
 import com.example.dsc.Model.Chat;
@@ -42,7 +43,7 @@ public class ChatActivity extends AppCompatActivity {
     DatabaseReference reference;
     String mg;
     ProgressBar chatProgress;
-
+TextView chat_no;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +68,13 @@ public class ChatActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Q/A Chat");
+        chat_no=findViewById(R.id.chat_no);
+        chat_no.setVisibility(View.VISIBLE);
 
         message=findViewById(R.id.message_send);
         btn_send=findViewById(R.id.msg_btn_send);
         msg=findViewById(R.id.recycler_message);
-
+        message.requestFocus();
         msg.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setStackFromEnd(true);
@@ -155,12 +158,14 @@ public class ChatActivity extends AppCompatActivity {
                     if((Objects.requireNonNull(chat).getReceiver().equals(myid) && chat.getSender().equals(userid) )|| (chat.getReceiver().equals(userid)&& chat.getSender().equals(myid))){
                         mChat.add(chat);
                         chatProgress.setVisibility(View.INVISIBLE);
+                        chat_no.setVisibility(View.INVISIBLE);
 
                     }
 
                 }
                 messageAdapter= new MessageAdapter(ChatActivity.this,mChat,imageUrl);
                 msg.setAdapter(messageAdapter);
+
 
 
             }
@@ -171,5 +176,6 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+        chatProgress.setVisibility(View.INVISIBLE);
     }
 }

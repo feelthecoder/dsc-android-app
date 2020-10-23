@@ -18,8 +18,8 @@ import android.widget.Toast;
 
 import com.example.dsc.Model.TrainGet;
 import com.example.dsc.R;
-import com.example.dsc.TRegistrationActivity;
-import com.example.dsc.TrainDetailActivity;
+import com.example.dsc.EventActivity.TRegistrationActivity;
+import com.example.dsc.EventActivity.TrainDetailActivity;
 import com.example.dsc.ViewHolder.ViewSpace;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

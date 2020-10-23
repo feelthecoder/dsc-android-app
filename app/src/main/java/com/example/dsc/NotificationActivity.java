@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.dsc.Adapters.NotificationAdapter;
 import com.example.dsc.Model.NotificationModel;
-import com.example.dsc.ViewHolder.ViewSpace;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -146,8 +145,6 @@ public class NotificationActivity extends AppCompatActivity {
             notificationAdapter= new NotificationAdapter(NotificationActivity.this,infoList);
             recyclerView.setAdapter(notificationAdapter);
 
-            ViewSpace itemDecoration = new ViewSpace(getApplicationContext(),1);
-            recyclerView.addItemDecoration(itemDecoration);
 
         }
 

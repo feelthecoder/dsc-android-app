@@ -2,25 +2,26 @@ package com.example.dsc.Model;
 
 public class LeaderSimple implements Comparable {
     String quizwon,skills,name,image;
-    String DP;
+    String dp;
 
     public LeaderSimple() {
     }
 
-    public LeaderSimple(String DP, String quizwon, String skills, String name, String image) {
-        this.DP = DP;
+
+    public LeaderSimple(String dp, String quizwon, String skills, String name, String image) {
+        this.dp = dp;
         this.quizwon = quizwon;
         this.skills = skills;
         this.name = name;
         this.image = image;
     }
 
-    public String getDP() {
-        return DP;
+    public String getDp() {
+        return dp;
     }
 
-    public void setDP(String DP) {
-        this.DP = DP;
+    public void setDp(String dp) {
+        this.dp = dp;
     }
 
     public String getQuizwon() {
@@ -57,7 +58,7 @@ public class LeaderSimple implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        int points= Integer.parseInt(getDP());
-        return Integer.parseInt(this.DP)-points;
+        int points= Integer.parseInt(getDp());
+        return Integer.parseInt(this.dp)-points;
     }
 }

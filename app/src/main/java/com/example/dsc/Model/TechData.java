@@ -1,23 +1,29 @@
 package com.example.dsc.Model;
 
+import androidx.annotation.Keep;
+
+@Keep
 public class TechData {
-    String tTitle,tDescription,urlImage;
+    public String tCaption, tDescription, tImg,tLike, tShare, tComment;
 
     public TechData() {
     }
 
-    public TechData(String tTitle, String tDescription, String urlImage) {
-        this.tTitle = tTitle;
+    public TechData(String tCaption, String tDescription, String tImg, String tLike, String tShare, String tComment) {
+        this.tCaption = tCaption;
         this.tDescription = tDescription;
-        this.urlImage = urlImage;
+        this.tImg = tImg;
+        this.tLike = tLike;
+        this.tShare = tShare;
+        this.tComment = tComment;
     }
 
-    public String gettTitle() {
-        return tTitle;
+    public String gettCaption() {
+        return tCaption;
     }
 
-    public void settTitle(String tTitle) {
-        this.tTitle = tTitle;
+    public void settCaption(String tCaption) {
+        this.tCaption = tCaption;
     }
 
     public String gettDescription() {
@@ -28,11 +34,35 @@ public class TechData {
         this.tDescription = tDescription;
     }
 
-    public String getUrlImage() {
-        return urlImage;
+    public String gettImg() {
+        return tImg;
     }
 
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
+    public void settImg(String tImg) {
+        this.tImg = tImg;
+    }
+
+    public String gettLike() {
+        return tLike;
+    }
+
+    public void settLike(String tLike) {
+        this.tLike = tLike;
+    }
+
+    public String gettShare() {
+        return tShare;
+    }
+
+    public void settShare(String tShare) {
+        this.tShare = tShare;
+    }
+
+    public String gettComment() {
+        return tComment;
+    }
+
+    public void settComment(String tComment) {
+        this.tComment = tComment;
     }
 }

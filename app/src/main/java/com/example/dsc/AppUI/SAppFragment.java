@@ -17,8 +17,8 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.dsc.R;
-import com.example.dsc.VersionActivity;
-import com.example.dsc.dsc_splash;
+import com.example.dsc.SettingsActivity.VersionActivity;
+import com.example.dsc.StartActivity.dsc_splash;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

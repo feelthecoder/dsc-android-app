@@ -1,5 +1,8 @@
 package com.example.dsc.Model;
 
+import androidx.annotation.Keep;
+
+@Keep
 public class CatSample {
     String category,name,image;
 

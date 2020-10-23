@@ -1,5 +1,8 @@
 package com.example.dsc.Model;
 
+import androidx.annotation.Keep;
+
+@Keep
 public class CompeteGet {
     String title,pic,description,shortdes,date;
 

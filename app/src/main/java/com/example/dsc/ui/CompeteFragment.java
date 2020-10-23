@@ -16,8 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dsc.CRegistrationActivity;
-import com.example.dsc.CompeteDetailActivity;
+import com.example.dsc.EventActivity.CRegistrationActivity;
+import com.example.dsc.EventActivity.CompeteDetailActivity;
 import com.example.dsc.Model.CompeteGet;
 import com.example.dsc.R;
 import com.example.dsc.ViewHolder.ViewSpace;

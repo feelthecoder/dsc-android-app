@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.dsc.LoginActivity.login;
 import com.example.dsc.ui.AboutFragment;
 import com.example.dsc.ui.CompeteFragment;
 import com.example.dsc.ui.DonateFragment;
@@ -474,7 +475,7 @@ public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         public void onClick(DialogInterface dialog, int which) {
                             FirebaseAuth.getInstance().signOut();
                             sign_out();
-                            Intent intent = new Intent(Main1Activity.this,login.class);
+                            Intent intent = new Intent(Main1Activity.this, login.class);
                             startActivity(intent);
                             finish();
                         }

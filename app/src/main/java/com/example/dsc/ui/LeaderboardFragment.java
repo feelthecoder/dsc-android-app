@@ -81,7 +81,7 @@ public class LeaderboardFragment extends Fragment {
 
 
     private void loadDataToArrayList() {
-        Query queryRef = lRef.orderByChild("DP");
+        Query queryRef = lRef.orderByChild("dp");
         FirebaseRecyclerOptions<LeaderSimple> options=
                 new FirebaseRecyclerOptions.Builder<LeaderSimple>()
                         .setQuery(queryRef,LeaderSimple.class).build();
@@ -95,14 +95,14 @@ public class LeaderboardFragment extends Fragment {
                 lRef.child(leaderID).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("DP")){
+                        if(dataSnapshot.hasChild("dp")){
                             progressBar.setVisibility(View.INVISIBLE);
 
                             final String name= Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
                             final String image= Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
                             final String quizWon= Objects.requireNonNull(dataSnapshot.child("quizwon").getValue()).toString();
                             final String skills= Objects.requireNonNull(dataSnapshot.child("skills").getValue()).toString();
-                            final String points = Objects.requireNonNull(dataSnapshot.child("DP").getValue()).toString();
+                            final String points = Objects.requireNonNull(dataSnapshot.child("dp").getValue()).toString();
 
                             leaderViewHolder.name.setText(name);
                             leaderViewHolder.points.setText(points);

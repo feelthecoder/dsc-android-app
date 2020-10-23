@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.example.dsc.R;
 import com.example.dsc.SettingsActivity.EditProfileActivity;
 import com.example.dsc.SettingsActivity.ViewProfileActivity;
-import com.example.dsc.login;
+import com.example.dsc.LoginActivity.login;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.OnCompleteListener;

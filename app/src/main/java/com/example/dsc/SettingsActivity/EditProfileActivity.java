@@ -257,9 +257,9 @@ public class EditProfileActivity extends AppCompatActivity {
         aRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.hasChild("DP")) {
+                if (dataSnapshot.hasChild("dp")) {
                     skills = dataSnapshot.child("skills").getValue().toString();
-                    DP = dataSnapshot.child("DP").getValue().toString();
+                    DP = dataSnapshot.child("dp").getValue().toString();
                     tDP.setText(DP + " Developer Points");
                     tskills.setText(skills);
                 }

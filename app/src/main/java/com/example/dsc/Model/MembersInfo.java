@@ -1,5 +1,8 @@
 package com.example.dsc.Model;
 
+import androidx.annotation.Keep;
+
+@Keep
 public class MembersInfo {
     String name,post,skills,specia,git,fb,linkdin,hackerrank,insta,bio,dp,projects;
 
