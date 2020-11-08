@@ -27,6 +27,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.feelthecoder.dsc.ChatActivity;
 import com.feelthecoder.dsc.FormsActivity;
@@ -57,16 +67,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private ViewFlipper viewFlipper;
@@ -328,19 +328,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                             if(mProcessLike)
                                             {
-                                                if(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).hasChild("Like")){
+                                                if(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).hasChild("like")){
                                                     dRef.child(postID).child("tLike").setValue(""+(totallike-1));
-                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Like").removeValue();
-                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Name").removeValue();
-                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Image").removeValue();
+                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("like").removeValue();
+                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("name").removeValue();
+                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("image").removeValue();
                                                     techViewHolder.like.setAnimation(likeAnimate);
                                                     mProcessLike=false;
                                                 }
                                                 else{
                                                     dRef.child(postID).child("tLike").setValue(""+(totallike+1));
-                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Like").setValue("Liked");
-                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Name").setValue(name[0]);
-                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Image").setValue(image[0]);
+                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("like").setValue("Liked");
+                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("name").setValue(name[0]);
+                                                    likeRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("image").setValue(image[0]);
                                                     techViewHolder.like.setAnimation(likeAnimate);
                                                     mProcessLike=false;
                                                 }
@@ -595,7 +595,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         likeRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).hasChild("Like")){
+                if(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).hasChild("like")){
                     techViewHolder.like.setImageResource(R.drawable.ic_liked);
 
                 }else

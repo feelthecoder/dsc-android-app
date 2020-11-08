@@ -1,5 +1,8 @@
 package com.feelthecoder.dsc.Model;
 
+import androidx.annotation.Keep;
+
+@Keep
 public class LeaderSimple implements Comparable {
     String quizwon,skills,name,image;
     String dp;

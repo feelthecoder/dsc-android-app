@@ -83,9 +83,9 @@ public class PeopleLikedActivity extends AppCompatActivity {
                 likeRef.child(likeID).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("Image")) {
-                            String namee= Objects.requireNonNull(dataSnapshot.child("Name").getValue()).toString();
-                            String profile= Objects.requireNonNull(dataSnapshot.child("Image").getValue()).toString();
+                        if (dataSnapshot.hasChild("image")) {
+                            String namee= Objects.requireNonNull(dataSnapshot.child("name").getValue()).toString();
+                            String profile= Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
 
 
                             likeViewHolder.name.setText(namee);

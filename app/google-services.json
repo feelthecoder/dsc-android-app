@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "868245345830",
-    "firebase_url": "https://developer-student-club-22121.firebaseio.com",
-    "project_id": "developer-student-club-22121",
-    "storage_bucket": "developer-student-club-22121.appspot.com"
+    "project_number": "925536166088",
+    "firebase_url": "https://dsc-rec-bijnor.firebaseio.com",
+    "project_id": "dsc-rec-bijnor",
+    "storage_bucket": "dsc-rec-bijnor.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:868245345830:android:759035b902a4790f89f8e7",
+        "mobilesdk_app_id": "1:925536166088:android:ce25c4ec12337d6ac445fd",
         "android_client_info": {
-          "package_name": "com.example.dsc"
+          "package_name": "com.feelthecoder.dsc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "868245345830-vbh70a6f6j3n1ea31dnsv1d3o6iddunl.apps.googleusercontent.com",
+          "client_id": "925536166088-00d8be25vhsk9hmqb1e6qqv757l09lrh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.dsc",
-            "certificate_hash": "7f90812aaffd7c15b86680839a166a7267e0f833"
+            "package_name": "com.feelthecoder.dsc",
+            "certificate_hash": "0f8ee1170cea54623f565a0042a56aff9ad31e81"
           }
         },
         {
-          "client_id": "868245345830-iibna4u3f3s0e1h6l9le02naf96hu8p8.apps.googleusercontent.com",
+          "client_id": "925536166088-0ciquh5khk3avi8uammr17h30lr0f2br.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAv-vr7EhS2-dmQ5AYmtTY6bVog4suTJqs"
+          "current_key": "AIzaSyCXTX59LyioVmBoUpCJeW0dr9aBzQfwclc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "868245345830-iibna4u3f3s0e1h6l9le02naf96hu8p8.apps.googleusercontent.com",
+              "client_id": "925536166088-0ciquh5khk3avi8uammr17h30lr0f2br.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

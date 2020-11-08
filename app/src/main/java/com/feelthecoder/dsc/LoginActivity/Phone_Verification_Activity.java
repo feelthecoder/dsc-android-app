@@ -11,6 +11,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
+
 import com.feelthecoder.dsc.Main1Activity;
 import com.feelthecoder.dsc.Model.User;
 import com.feelthecoder.dsc.R;
@@ -31,11 +36,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 
 public class Phone_Verification_Activity extends AppCompatActivity {
 
@@ -133,6 +133,7 @@ public class Phone_Verification_Activity extends AppCompatActivity {
 
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 message = "Invalid code entered.";
+                                Toast.makeText(Phone_Verification_Activity.this, message, Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

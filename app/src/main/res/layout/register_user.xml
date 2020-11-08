@@ -239,6 +239,7 @@
         android:buttonTint="?attr/textcolor"
         android:id="@+id/male_radio"
         android:text="Male"
+        android:checked="true"
         android:visibility="visible" />
     <RadioButton
         android:textColor="?attr/textcolor"
@@ -252,6 +253,7 @@
         </RelativeLayout>
     </ScrollView>
     <Button
+        android:enabled="false"
         android:textColor="?attr/textcolor"
         android:id="@+id/sign_up_btn"
         android:layout_alignParentBottom="true"

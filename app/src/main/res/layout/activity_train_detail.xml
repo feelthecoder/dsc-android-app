@@ -52,7 +52,6 @@
         <TextView
             android:textColor="?attr/textcolor"
             android:id="@+id/t_dsc_name"
-            android:justificationMode="inter_word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Training Name"

@@ -4,38 +4,38 @@ import androidx.annotation.Keep;
 
 @Keep
 public class LikeModel {
-    String Like,Image,Name;
+    String like,image,name;
 
-    public LikeModel(String Like, String Image, String Name) {
-        this.Like = Like;
-        this.Image = Image;
-        this.Name = Name;
+    public LikeModel(String like, String image, String name) {
+        this.like = like;
+        this.image = image;
+        this.name = name;
     }
 
     public LikeModel() {
     }
 
     public String getLike() {
-        return Like;
+        return like;
     }
 
     public void setLike(String like) {
-        Like = like;
+        this.like = like;
     }
 
     public String getImage() {
-        return Image;
+        return image;
     }
 
     public void setImage(String image) {
-        Image = image;
+        this.image = image;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }

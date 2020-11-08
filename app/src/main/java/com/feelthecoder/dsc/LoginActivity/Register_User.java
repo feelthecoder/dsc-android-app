@@ -21,6 +21,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
+
 import com.feelthecoder.dsc.Main1Activity;
 import com.feelthecoder.dsc.Model.User;
 import com.feelthecoder.dsc.R;
@@ -47,11 +52,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
-
 public class Register_User extends AppCompatActivity {
     private static final int CHOOSE_IMAGE = 101;
 
@@ -68,7 +68,8 @@ public class Register_User extends AppCompatActivity {
     ProgressDialog progressBarWheel;
     private Uri uriProfileImage;
     String displayName;
- public static Activity fa;
+    Button btn;
+    public static Activity fa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SharedPreferences mPrefs=getSharedPreferences("MyPrefs",0);
@@ -89,7 +90,7 @@ public class Register_User extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(Register_User.this, R.color.colorWhite));
         window.setNavigationBarColor(ContextCompat.getColor(Register_User.this,R.color.colorWhite));
         TextView txt = findViewById(R.id.already_have_account);
-        Button btn = findViewById(R.id.sign_up_btn);
+        btn = findViewById(R.id.sign_up_btn);
         ppBar = findViewById(R.id.ppBaar);
         imageView = findViewById(R.id.imagelogo1);
         mAuth = FirebaseAuth.getInstance();
@@ -118,6 +119,7 @@ public class Register_User extends AppCompatActivity {
     }
 
     private void register_user() {
+
         mail = findViewById(R.id.edtx4);
         email = mail.getText().toString();
         nPass = findViewById(R.id.edtx6);
@@ -136,9 +138,11 @@ public class Register_User extends AppCompatActivity {
         dob = dateOfBirth.getText().toString();
         radioSexGroup = findViewById(R.id.radiog);
 
-        int selectedID=radioSexGroup.getCheckedRadioButtonId();
+        int selectedID = radioSexGroup.getCheckedRadioButtonId();
         sex=findViewById(selectedID);
         gender=sex.getText().toString();
+
+
 
 
         if (firstName.isEmpty()) {
@@ -211,10 +215,8 @@ public class Register_User extends AppCompatActivity {
             return;
         }
 
-        if(profileImageUrl.isEmpty()){
-            Toast.makeText(this, "Please add profile to continue", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
+
         displayName = firstName + " " + lastName;
         ProgressDialog.show(Register_User.this, "Creating your account", "Please wait..", true);
         mAuth.createUserWithEmailAndPassword(email, confirmPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -317,6 +319,7 @@ public class Register_User extends AppCompatActivity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uriProfileImage);
                 imageView.setImageBitmap(bitmap);
                 uploadImage();
+                btn.setEnabled(true);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -349,7 +352,6 @@ public class Register_User extends AppCompatActivity {
                         }
                     });
         }
-
     }
 
     private void showImageChooser() {

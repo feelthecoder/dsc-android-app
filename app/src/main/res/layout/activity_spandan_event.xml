@@ -50,7 +50,6 @@
 
                 <TextView
                     android:id="@+id/s_dsc_name"
-                    android:justificationMode="inter_word"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Event Name"

@@ -424,7 +424,7 @@
         android:background="?attr/backgroundcolor"
         android:id="@+id/tech_posts"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/rel_wish"
         android:layout_marginTop="30dp"
         >
@@ -443,7 +443,7 @@
             android:clipToPadding="true"
             android:scrollbars="none"
             android:scrollbarStyle="outsideOverlay"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"/>
     </RelativeLayout>
     <RelativeLayout
         android:background="#000000"

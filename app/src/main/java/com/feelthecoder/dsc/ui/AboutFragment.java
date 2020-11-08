@@ -10,6 +10,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.feelthecoder.dsc.AboutActivity.BoardActivity;
 import com.feelthecoder.dsc.AboutActivity.DesignActivity;
 import com.feelthecoder.dsc.AboutActivity.ManagementActivity;
@@ -22,10 +26,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import static com.feelthecoder.dsc.R.layout.fragment_about;
 
@@ -55,8 +55,8 @@ public class AboutFragment extends Fragment {
                     dRef.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if(dataSnapshot.hasChild("about")){
-                                link=dataSnapshot.child("about").getValue().toString();
+                            if(dataSnapshot.hasChild("aboutpdf")){
+                                link=dataSnapshot.child("aboutpdf").getValue().toString();
 
                                 Intent intent=new Intent(getActivity(), ActivityPDF.class);
                                 intent.putExtra("link",link);

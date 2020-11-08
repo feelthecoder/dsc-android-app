@@ -10,6 +10,11 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
+
 import com.feelthecoder.dsc.Main1Activity;
 import com.feelthecoder.dsc.Model.User;
 import com.feelthecoder.dsc.R;
@@ -33,11 +38,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 
 import static android.view.View.GONE;
 
@@ -94,7 +94,8 @@ public class Google_Login_Activity extends AppCompatActivity {
                 firebaseAuthWithGoogle(account);
             }
             catch (ApiException e) {
-                Toast.makeText(Google_Login_Activity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                bar.setVisibility(View.INVISIBLE);
+                Toast.makeText(Google_Login_Activity.this, e.getMessage()+" Unable to login", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -105,19 +106,20 @@ public class Google_Login_Activity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            bar.setVisibility(GONE);
-                            final FirebaseUser user1=mAuth.getCurrentUser();
+                           final FirebaseUser user1=mAuth.getCurrentUser();
                             String userRef= Objects.requireNonNull(user1).getUid();
                             DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("Users").child(userRef);
                             databaseReference.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if (dataSnapshot.exists()){
+                                        bar.setVisibility(GONE);
                                         Toast.makeText(Google_Login_Activity.this, "Logged In", Toast.LENGTH_SHORT).show();
                                         Intent intent =new Intent(Google_Login_Activity.this, Main1Activity.class);
                                         startActivity(intent);
                                         finish();
                                     }else{
+                                        bar.setVisibility(GONE);
                                         updateUI(user1);
                                         Intent intent =new Intent(Google_Login_Activity.this,Main1Activity.class);
                                         startActivity(intent);

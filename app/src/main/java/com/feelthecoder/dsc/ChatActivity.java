@@ -10,6 +10,13 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.feelthecoder.dsc.Adapters.MessageAdapter;
 import com.feelthecoder.dsc.Model.Chat;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,16 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 public class ChatActivity extends AppCompatActivity {
 
-    final String UID="hG7x1c1oZ7VzqgHFtcvgyT5SO6y2";
+    final String UID="dye067yWTucIkGJbVRRc6zmOIY93";
     RecyclerView msg;
     ImageButton btn_send;
     EditText message;

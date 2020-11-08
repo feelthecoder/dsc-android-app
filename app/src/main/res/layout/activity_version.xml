@@ -29,7 +29,7 @@
         android:textSize="15sp"
         android:layout_marginEnd="10dp"
         android:layout_below="@id/toolbar_version"
-        android:text="This application is designed and developed by Vikas Kumar. The version code of this application is 1.0. This application version name is 1.0. The next upcoming version of this application is named as 1.01 with version code of 1.1. The details of developer are given below."
+        android:text="This application is designed and developed by Vikas Kumar, Anubha Verma and Team. The version code of this application is 1. This application version name is 1.0. The next upcoming version of this application is named as 1.01 with version code of 1.1. The details of developer are given below."
         />
     <TextView
         android:id="@+id/ver_gmail"

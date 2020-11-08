@@ -55,7 +55,6 @@
             android:id="@+id/w_workshop_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:justificationMode="inter_word"
             android:text="Workshop Name"
             android:textAlignment="center"
             android:textSize="30sp" />

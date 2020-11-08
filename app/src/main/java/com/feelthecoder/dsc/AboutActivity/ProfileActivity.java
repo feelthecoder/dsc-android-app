@@ -119,6 +119,8 @@ public class ProfileActivity extends AppCompatActivity {
                     intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.linkedin.com/profile/view?id="+linkd));
                 }
                 startActivity(intent);
+
+
             }
         });
 
