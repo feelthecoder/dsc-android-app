@@ -18,101 +18,107 @@
         android:testOnly="false"
         android:windowFullscreen="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.feelthecoder.dsc.ShowDonation"></activity>
+        <activity android:name="com.feelthecoder.dsc.ShowDonation" android:exported="true" />
         <activity android:name="com.feelthecoder.dsc.ActivityResources" />
-        <activity android:name="com.feelthecoder.dsc.QuizActivity.ResultQuizActivity" />
+        <activity android:name="com.feelthecoder.dsc.QuizActivity.ResultQuizActivity"  android:exported="true" />
         <activity android:name="com.feelthecoder.dsc.QuizActivity.QuizResultActivity" />
-        <activity android:name="com.feelthecoder.dsc.QuizActivity.QuizMainActivity" />
+        <activity android:name="com.feelthecoder.dsc.QuizActivity.QuizMainActivity"  android:exported="true" />
         <activity android:name="com.feelthecoder.dsc.QuizActivity.MyQuiz" />
-        <activity android:name="com.feelthecoder.dsc.QuizActivity.StartQuizActivity" />
-        <activity android:name="com.feelthecoder.dsc.QuizActivity.CategoryActivity" />
-        <activity android:name="com.feelthecoder.dsc.NotificationActivity" />
-        <activity android:name="com.feelthecoder.dsc.ChatActivity" />
-        <activity android:name="com.feelthecoder.dsc.ClaimActivity" />
-        <activity android:name="com.feelthecoder.dsc.AboutActivity.ProfileActivity" />
-        <activity android:name="com.feelthecoder.dsc.AboutActivity.DesignActivity" />
-        <activity android:name="com.feelthecoder.dsc.AboutActivity.TechnicalActivity" />
-        <activity android:name="com.feelthecoder.dsc.AboutActivity.BoardActivity" />
-        <activity android:name="com.feelthecoder.dsc.AboutActivity.ManagementActivity" />
-        <activity android:name="com.feelthecoder.dsc.AboutActivity.MembersActivity" />
-        <activity android:name="com.feelthecoder.dsc.ActivityWeb" />
-        <activity android:name="com.feelthecoder.dsc.SettingsActivity.VersionActivity" />
-        <activity android:name="com.feelthecoder.dsc.DonateHistoryActivity" />
-        <activity android:name="com.feelthecoder.dsc.SettingsActivity.EditProfileActivity" />
-        <activity android:name="com.feelthecoder.dsc.SettingsActivity.ViewProfileActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceBlogActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceStandardBookActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceDSCActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceNPTELActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceUdemyActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceYoutubeActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourcePDFActivity" />
-        <activity android:name="com.feelthecoder.dsc.ResourceActivity.eResourceActivity" />
-        <activity android:name="com.feelthecoder.dsc.ViewImageActivity" />
-        <activity android:name="com.feelthecoder.dsc.EventActivity.SpandanRegistrationActivity" />
-        <activity android:name="com.feelthecoder.dsc.EventActivity.SpandanEventActivity" />
-        <activity android:name="com.feelthecoder.dsc.ViewSpandanActivity" />
+        <activity android:name="com.feelthecoder.dsc.QuizActivity.StartQuizActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.QuizActivity.CategoryActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.NotificationActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ChatActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ClaimActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.AboutActivity.ProfileActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.AboutActivity.DesignActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.AboutActivity.TechnicalActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.AboutActivity.BoardActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.AboutActivity.ManagementActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.AboutActivity.MembersActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ActivityWeb"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.SettingsActivity.VersionActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.DonateHistoryActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.SettingsActivity.EditProfileActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.SettingsActivity.ViewProfileActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceBlogActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceStandardBookActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceDSCActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceNPTELActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceUdemyActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourceYoutubeActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.ResourcePDFActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ResourceActivity.eResourceActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ViewImageActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.EventActivity.SpandanRegistrationActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.EventActivity.SpandanEventActivity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ViewSpandanActivity"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.ShowFormActivity"
-            android:label="Form Details" />
+            android:label="Form Details"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.WorkshopDetailActivity"
-            android:label="Workshop Details" />
-        <activity android:name="com.feelthecoder.dsc.ActivityPDF" />
+            android:label="Workshop Details"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.ActivityPDF"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.TrainDetailActivity"
-            android:label="Training Details" />
+            android:label="Training Details"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.CompeteDetailActivity"
-            android:label="Competition Details" />
+            android:label="Competition Details"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.RegistrationActivity"
-            android:label="Registration" />
+            android:label="Registration"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.CRegistrationActivity"
-            android:label="Registration" />
+            android:label="Registration"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.EventDetailActivity"
-            android:label="Event Details" />
+            android:label="Event Details"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.PeopleLikedActivity"
-            android:label="People Who Liked" />
+            android:label="People Who Liked"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.FormsActivity"
-            android:label="Submitted Forms" />
+            android:label="Submitted Forms"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.ResultActivity"
-            android:label="My Results" />
+            android:label="My Results"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.MyProjects"
-            android:label="My Projects" />
+            android:label="My Projects"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.TRegistrationActivity"
-            android:label="Registration" />
+            android:label="Registration"  android:exported="true" />
         <activity
             android:name="com.feelthecoder.dsc.EventActivity.WRegistrationActivity"
-            android:label="Registration" />
-        <activity android:name="com.feelthecoder.dsc.StartActivity.dsc_splash">
+            android:label="Registration"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.StartActivity.dsc_splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.feelthecoder.dsc.StartActivity.welcome_main" />
-        <activity android:name="com.feelthecoder.dsc.StartActivity.slide_layout_4" />
-        <activity android:name="com.feelthecoder.dsc.LoginActivity.Phone_Verification_Activity" />
-        <activity android:name="com.feelthecoder.dsc.LoginActivity.login" />
-        <activity android:name="com.feelthecoder.dsc.LoginActivity.Register_User" />
-        <activity android:name="com.feelthecoder.dsc.LoginActivity.Login_Email" />
-        <activity android:name="com.feelthecoder.dsc.Main1Activity" />
-        <activity android:name="com.feelthecoder.dsc.LoginActivity.Phone_Login_Main" />
-        <activity android:name="com.feelthecoder.dsc.LoginActivity.Google_Login_Activity" />
+        <activity android:name="com.feelthecoder.dsc.StartActivity.welcome_main"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.StartActivity.slide_layout_4"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.LoginActivity.Phone_Verification_Activity"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.LoginActivity.login"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.LoginActivity.Register_User"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.LoginActivity.Login_Email"  android:exported="true" />
+        <activity android:name="com.feelthecoder.dsc.Main1Activity"
+            android:exported="true"/>
+        <activity android:name="com.feelthecoder.dsc.LoginActivity.Phone_Login_Main"
+            android:exported="true"/>
+        <activity android:name="com.feelthecoder.dsc.LoginActivity.Google_Login_Activity"
+            android:exported="true"/>
         <activity
             android:name="com.feelthecoder.dsc.PostTechActivity"
-            android:label="Add Comments" />
+            android:label="Add Comments"
+            android:exported="true"/>
 
-        <service android:name="com.feelthecoder.dsc.Services.FCMService">
+        <service android:name="com.feelthecoder.dsc.Services.FCMService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

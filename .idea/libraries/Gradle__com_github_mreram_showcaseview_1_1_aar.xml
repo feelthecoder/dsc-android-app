@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: com.github.mreram:showcaseview:1.1@aar">
+  <library name="Gradle: com.github.mreram:showcaseview:1.1@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d5b8602ec132aaa25e550e2d121dc268/jetified-showcaseview-1.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d5b8602ec132aaa25e550e2d121dc268/jetified-showcaseview-1.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d5b8602ec132aaa25e550e2d121dc268/jetified-showcaseview-1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/00938448fe9b7ad407e95900f2220b75/transformed/jetified-showcaseview-1.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/00938448fe9b7ad407e95900f2220b75/transformed/jetified-showcaseview-1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/00938448fe9b7ad407e95900f2220b75/transformed/jetified-showcaseview-1.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
